@@ -1,0 +1,63 @@
+file00458.txt	50																		
+Yes	","	please	.																
+UH	","	UH	.																
+																			
+																			
+file00070.txt	32																		
+My	home	is	very	country	side	.													
+PRP$	NN	VBZ	RB	NN	NN	.													
+																			
+																			
+file00040.txt	70																		
+why	do	you	go	to	see	the	movie	?											
+WRB	VBP	PRP	VB	TO	VB	DT	NN	.											
+																			
+																			
+file01019.txt	11																		
+I	moved	in	Tokyo	about	six	years	ago	.											
+PRP	VBD	IN	NNP	IN	CD	NNS	RB	.											
+																			
+																			
+file00161.txt	59																		
+I	think	I	drank	a	little	too	much	and	after	the	entertaining	","	I	was	sleeping	at	the	train	.
+PRP	VBP	PRP	VBP	DT	JJ	RB	JJ	CC	IN	DT	NN	","	PRP	VBD	VBG	IN	DT	NN	.
+																			
+																			
+file00190.txt	23																		
+Art	critique	.																	
+NN	NN	.																	
+																			
+																			
+file00506.txt	18																		
+I	am	studying	law	.															
+PRP	VBP	VBG	NN	.															
+																			
+																			
+file00376.txt	39																		
+But	I	can	go	around	place	with	them	.											
+CC	PRP	MD	VB	IN	NN	IN	PRP	.											
+																			
+																			
+file00189.txt	57																		
+Thank	you	.																	
+VBP	PRP	.																	
+																			
+																			
+file00806.txt	147																		
+But	she	's	face	to	say	that	is	very	cute	so	at	last							
+CC	PRP	VBZ	NN	TO	VB	DT	VBZ	RB	JJ	RB	IN	JJ							
+																			
+																			
+file00235.txt	7																		
+It	's	about	thirty	minutes	.														
+PRP	VBZ	RB	CD	NNS	.														
+																			
+																			
+file00648.txt	34																		
+Kyoto	is	surrounded	by	mountains	.														
+NNP	VBZ	VBN	IN	NNS	.														
+																			
+																			
+file01201.txt	89																		
+Thank	you	","	thank	you	.														
+VBP	PRP	","	VBP	PRP	.														

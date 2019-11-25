@@ -98,3 +98,6 @@ If they are used to modify nouns, they are JJ, not CD....
 You can insert manner adverbs (e.g., calmly) when they are adverbs.
 - to sit calmly `by` (RB)
 - \*to give calmly `up` (RP)
+
+### Training
+See training data in the "training" folder!
