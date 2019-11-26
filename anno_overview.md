@@ -1,7 +1,7 @@
 # Part Of Speech (POS) tag annotation manual
 
 This document explains the POS tag set to use.
-We are going to use PennTag, which is a specified tagset for English.
+We are going to use Penn Tags, which is a specified tagset for English.
 
 ## POS tagging Scheme
 Here, each tag is described and examples of each are also given.
