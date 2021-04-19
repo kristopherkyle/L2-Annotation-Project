@@ -36,7 +36,7 @@ Here, each tag is described and examples of each are also given.
 |     RBS     | adverb, superlative                      | `best`  ||
 |      RP     | particle                                 | give `up`  |Verbal particles are categorized as ADP in UPOS, not PART.|
 |     SYM     | Symbols (Mathematical or scientific)     | `π`, `˚C`                                   ||
-|      TO     | to  (Infinitival)                        | `to` go, `to` him                           ||
+|      TO     | to  (all instances of "to")                        | `to` go, `to` him                           |Note that in some cases, "to" is tagged as "IN" in the ONTONOTES corpus. This is incorrect because "to" should always be tagged as "TO"|
 |      UH     | interjection                             | `uhhuhhuhh`                               ||
 |      VB     | verb, base form   (subsumes imperatives, nfinitives, subjunctives)  | `take`                                    ||
 |     VBD     | verb, past tense                         | `took`                                    |"D" represents "-ed"|
