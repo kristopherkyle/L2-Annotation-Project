@@ -47,14 +47,24 @@ Here, each tag is described and examples of each are also given.
 |     WDT     | wh-determiner                            | `which`                                   ||
 |      WP     | wh-pronoun                               | `who`, `what`, `whom`                ||
 |     WP$     | possessive wh-pronoun                    | `whose`                                   ||
-|     WRB     | wh-abverb                                | `where`, `when` ||
+|     WRB     | wh-abverb                                | `where`, `when`,`why` ||
 
 - Punctuations can be copied as it is.
 
 
-## Some problematic cases
+## Some problematic tags
 The following section will outline some frequent problematic cases. This is NOT exhaustive, and if you think your questions is not answered, refer to the following manual [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf).
 
+### Adverb (RB) or Particle (RP)
+(For more details see the [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf) on page 21).
+You can insert manner adverbs (e.g., calmly) when they are adverbs.
+- to sit calmly `by` (RB)
+- \*to give calmly `up` (RP)
+
+### Numbers (I am not sure this is reflected in spaCy)
+If they are used to modify nouns, they are JJ, not CD....
+
+## Some problematic words
 
 ### Both, either, all, etc. (CC, DT, or PDT?)
 If both, either is directly modifying a noun, they are determiner (DT).
@@ -71,19 +81,19 @@ If both or either are used with coordinating conjunctions, they are CC.
 - Either (CC) A or B
 ?? Both of the two.
 
-### Numbers (I am not sure this is reflected in spaCy)
-If they are used to modify nouns, they are JJ, not CD....
+### "about" (RB, IN, or RP?)
+If "about means "approximately", it should be tagged as RB (e.g., "It will take about one hour")
+If "about" has an object (and does not mean "approximately"), then it should be tagged as IN (e.g., "talking about a species...")
+In some other cases, "about" will be tagged as an RP. (e.g., "bring about change"). See "Adverb (RB) or Particle (RP)" section  for more on this.
 
+### "much" (JJ or RB?)
+"much" should be tagged as JJ when explicitly modifying a noun or noun phrase (e.g., "they drank too much **beer**")
+"much" should be tagged as RB if not explicitly modifying a noun or noun phrase (e.g., "they drank too much")
 
 ### "one" (CD or NN?)
 >Sometimes it is unclear whether one is cardinal number or a noun. In general, it should be tagged as a cardinal number (CD) even when it is not clearly that of a numeral
 
-
 - one (CD) of the reasons
 - the only one (NN) of its kind.
 
-### Adverb (RB)or Particle (RP)
-(For more details see the [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf) on page 21).
-You can insert manner adverbs (e.g., calmly) when they are adverbs.
-- to sit calmly `by` (RB)
-- \*to give calmly `up` (RP)
+
