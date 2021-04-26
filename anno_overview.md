@@ -91,7 +91,7 @@ In some other cases, "about" will be tagged as an RP. (e.g., "bring about change
 "much" should be tagged as RB if not explicitly modifying a noun or noun phrase (e.g., "they drank too much")
 
 ### "one" (CD or NN?)
->Sometimes it is unclear whether one is cardinal number or a noun. In general, it should be tagged as a cardinal number (CD) even when it is not clearly that of a numeral
+Sometimes it is unclear whether one is cardinal number or a noun. In general, it should be tagged as a cardinal number (CD) even when it is not clearly that of a numeral
 
 - one (CD) of the reasons
 - the only one (NN) of its kind.
