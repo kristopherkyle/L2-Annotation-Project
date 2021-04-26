@@ -67,9 +67,9 @@ If they are used to modify nouns, they are JJ, not CD....
 ## Some problematic words
 
 ### "about" (RB, IN, or RP?)
-If "about means "approximately", it should be tagged as RB (e.g., "It will take about one hour")
-If "about" has an object (and does not mean "approximately"), then it should be tagged as IN (e.g., "talking about a species...")
-In some other cases, "about" will be tagged as an RP. (e.g., "bring about change"). See "Adverb (RB) or Particle (RP)" section  for more on this.
+- If "about means "approximately", it should be tagged as RB (e.g., "It will take about one hour")
+- If "about" has an object (and does not mean "approximately"), then it should be tagged as IN (e.g., "talking about a species...")
+- In some other cases, "about" will be tagged as an RP. (e.g., "bring about change"). See "Adverb (RB) or Particle (RP)" section  for more on this.
 
 ### "both", "either", "all", etc. (CC, DT, or PDT?)
 If both, either is directly modifying a noun, they are determiner (DT).
@@ -87,8 +87,8 @@ If both or either are used with coordinating conjunctions, they are CC.
 ?? Both of the two.
 
 ### "much" (JJ or RB?)
-"much" should be tagged as JJ when explicitly modifying a noun or noun phrase (e.g., "they drank too much **beer**")
-"much" should be tagged as RB if not explicitly modifying a noun or noun phrase (e.g., "they drank too much")
+- "much" should be tagged as JJ when explicitly modifying a noun or noun phrase (e.g., "they drank too much **beer**")
+- "much" should be tagged as RB if not explicitly modifying a noun or noun phrase (e.g., "they drank too much")
 
 ### "one" (CD or NN?)
 Sometimes it is unclear whether one is cardinal number or a noun. In general, it should be tagged as a cardinal number (CD) even when it is not clearly that of a numeral
