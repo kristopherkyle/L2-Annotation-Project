@@ -66,7 +66,12 @@ If they are used to modify nouns, they are JJ, not CD....
 
 ## Some problematic words
 
-### Both, either, all, etc. (CC, DT, or PDT?)
+### "about" (RB, IN, or RP?)
+If "about means "approximately", it should be tagged as RB (e.g., "It will take about one hour")
+If "about" has an object (and does not mean "approximately"), then it should be tagged as IN (e.g., "talking about a species...")
+In some other cases, "about" will be tagged as an RP. (e.g., "bring about change"). See "Adverb (RB) or Particle (RP)" section  for more on this.
+
+### "both", "either", "all", etc. (CC, DT, or PDT?)
 If both, either is directly modifying a noun, they are determiner (DT).
 - Both (DT) boys
 - All (DT) girls
@@ -80,11 +85,6 @@ If both or either are used with coordinating conjunctions, they are CC.
 - Both (CC) X and Y.
 - Either (CC) A or B
 ?? Both of the two.
-
-### "about" (RB, IN, or RP?)
-If "about means "approximately", it should be tagged as RB (e.g., "It will take about one hour")
-If "about" has an object (and does not mean "approximately"), then it should be tagged as IN (e.g., "talking about a species...")
-In some other cases, "about" will be tagged as an RP. (e.g., "bring about change"). See "Adverb (RB) or Particle (RP)" section  for more on this.
 
 ### "much" (JJ or RB?)
 "much" should be tagged as JJ when explicitly modifying a noun or noun phrase (e.g., "they drank too much **beer**")
