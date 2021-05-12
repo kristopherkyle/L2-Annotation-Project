@@ -53,12 +53,12 @@ Here, each tag is described and examples of each are also given.
 |     WP$     | possessive wh-pronoun                    | `whose`                                   ||
 |     WRB     | wh-abverb                                | `where`, `when`,`why` ||
 |      $      |dollar sign                               | `$`                   ||
-|      "      | quotes                                   | `'`, `"`              | If there is a quote mark at the end of a sentence that is not previously matched (e.g., `This pizza is delicious."`) then do not tag it (it will be cleaned from the data later).|
+|      "      | quotes                                   | `' "`              | If there is a quote mark at the end of a sentence that is not previously matched (e.g., `This pizza is delicious."`) then do not tag it (it will be cleaned from the data later).|
 |(	| Right Facing Bracket |`(`||
 |(	| Left Facing Bracket |`(`||
 |,| comma | `,`||
 |.| end sentence punctuation|`. ! ?`||
-|:| colons, semi-colons, and hyphens|`: ; - ||
+|:| colons, semi-colons, and hyphens|`: ; -` ||
 
 
 ## Some problematic tags
