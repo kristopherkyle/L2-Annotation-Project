@@ -105,4 +105,16 @@ Sometimes it is unclear whether one is cardinal number or a noun. In general, it
 - one (CD) of the reasons
 - the only one (NN) of its kind.
 
+### "so" (RB, CC, or IN?)
+`So` is quite versatile and can therefore be difficult to tag. Note that `so` is not tagged consisentently in the corpus.
+
+`So` will often be used as an adverb (RB) as in "that pizza was `so_RB` good"
+
+`So` can also be used as a coording (CC) or subordinating (IN) conjunction.
+- If `so` occurs at the beginning of a sentence and links the current sentence/utterance to a previous one it is a coordinating conjunction (CC) as in "`So_CC`, we went to the beach"
+- If `so` connects two clauses and could be replaced by the word `and` it should be tagged as CC as in "I like pizza, `so_CC` I eat it weekly"
+  - Note that the clause including `so_CC` cannot be moved to the beginning of an utterance "\*`So_CC` I eat it weekly, I like pizza"
+- If `so` connects two clauses and is followed by `that` or could be replaced with `so that` it is a subordinating conjunction (IN) as in "I eat pizza daily `so_IN` that I can get better at rock climbing"
+  - Note that a clause that includes `so_IN` can be moved to the beginning of a sentence (which means that `so_IN` can occur at the beginning of a sentence!) as in "`So_IN` that I can get better at rock climbing, I eat pizza daily"
+
 
