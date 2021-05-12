@@ -1,11 +1,15 @@
 # Part Of Speech (POS) tag annotation manual
 
-This document explains the POS tag set to use.
-We are going to use Penn Tags, which is a specified tagset for English.
+This document provides an initial explanation of the POS tags used. In this project, we will be using the Penn Tagset.
+
+If you have questions when tagging, please follow this procedure:
+- check this page
+- check the [PennTag POS tagging guideline.pdf](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf)
+- check the corpus using AntConc.
+- If the corpus results are ambiguous, then bring up the issue in the Discord page or in our weekly meeting and we will address it.
 
 ## POS tagging Scheme
 Here, each tag is described and examples of each are also given.
-- Penn Tagset is a language specific POS tag set for English You can find the whole manual if you got confused [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf).
 
 ****Note that the following `this style` is used for examples.**
 
@@ -48,8 +52,13 @@ Here, each tag is described and examples of each are also given.
 |      WP     | wh-pronoun                               | `who`, `what`, `whom`                ||
 |     WP$     | possessive wh-pronoun                    | `whose`                                   ||
 |     WRB     | wh-abverb                                | `where`, `when`,`why` ||
-
-- Punctuations can be copied as it is.
+|      $      |dollar sign                               | `$`                   ||
+|      "      | quotes                                   | `'`, `"`              | If there is a quote mark at the end of a sentence that is not previously matched (e.g., `This pizza is delicious."`) then do not tag it (it will be cleaned from the data later).|
+|(	| Right Facing Bracket |`(`||
+|(	| Left Facing Bracket |`(`||
+|,| comma | `,`||
+|.| end sentence punctuation|`. ! ?`||
+|:| colons, semi-colons, and hyphens|`: ; - ||
 
 
 ## Some problematic tags
