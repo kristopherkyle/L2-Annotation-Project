@@ -64,7 +64,8 @@ Here, each tag is described and examples of each are also given.
 ## Dealing with L2 usage
 Often, utterances will include "errors". Following the procedures in Berzak et al. (2016), words will be tagged based on their realized form, and not on the intended one (with a few caveats). Guidelines for tagging such instances are provided below:
 - Subject-verb (dis)agreement: In the sentence, `A woman open her refrigerator`, `open` should be tagged as `VB` (which represents the surface form), not `VBZ` or `VBD` (either of which could represent the presumptive intended utterance).
-- Tense: Erroneous use of verb conjugations/tense are tagged based on the realized form. In the sentence `Yesterday, I eat pizza`, `eat` would be tagged as `VB`.
+- Tense: Erroneous use of verb conjugations/tense are tagged based on the realized form. In the sentence `Yesterday, I eat pizza`, `eat` would be tagged as `VBP`.
+- In cases where the form is ambiguous between `VB` another tag (e.g., `VBP`) **AND** the form doesn't agree with the subject in any tense, use the `VB` tag (as in the first example above).
 - Plural marking: Words should be tagged according to the realized form. In the sentence `I ate one pizzas yesterday`, `pizza` should be tagged as `NNS`
 - Erroneous word form uses whose form cannot be assigned a Penn Tag get the closest reasonable tag. For example, adjectives with a plural marker (e.g., `interestings`) would get the normal `JJ` tag. This is also true for misspellings for which the realized form does not create an alternate word (e.g., `dessk` would be tagged as `NN`)
 -
