@@ -4,9 +4,10 @@ This document provides an initial explanation of the POS tags used. In this proj
 
 If you have questions when tagging, please follow this procedure:
 - check this page
-- check the [PennTag POS tagging guideline.pdf](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf)
+- check the [Original PennTag POS tagging guidelines .pdf](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf)
+- check the [ESL Tagging Guidelines .pdf (section 3)](http://people.csail.mit.edu/berzak/tle_guidelines/guidelines.pdf) and/or section 5 in the shorter [Berzak et al paper](https://www.aclweb.org/anthology/P16-1070.pdf)
 - check the corpus using AntConc.
-- If the corpus results are ambiguous, then bring up the issue in the Discord page or in our weekly meeting and we will address it.
+- If the corpus results are ambiguous (they sometimes are!), then bring up the issue in the Discord page or in our weekly meeting and we will address it.
 
 ## POS tagging Scheme
 Here, each tag is described and examples of each are also given.
@@ -60,7 +61,13 @@ Here, each tag is described and examples of each are also given.
 |.| end sentence punctuation|`. ! ?`||
 |:| colons, semi-colons, and hyphens|`: ; -` ||
 
-
+## Dealing with L2 usage
+Often, utterances will include "errors". Following the procedures in Berzak et al. (2016), words will be tagged based on their realized form, and not on the intended one (with a few caveats). Guidelines for tagging such instances are provided below:
+- Subject-verb (dis)agreement: In the sentence, `A woman open her refrigerator`, `open` should be tagged as `VB` (which represents the surface form), not `VBZ` or `VBD` (either of which could represent the presumptive intended utterance).
+- Tense: Erroneous use of verb conjugations/tense are tagged based on the realized form. In the sentence `Yesterday, I eat pizza`, `eat` would be tagged as `VB`.
+- Plural marking: Words should be tagged according to the realized form. In the sentence `I ate one pizzas yesterday`, `pizza` should be tagged as `NNS`
+- Erroneous word form uses whose form cannot be assigned a Penn Tag get the closest reasonable tag. For example, adjectives with a plural marker (e.g., `interestings`) would get the normal `JJ` tag. This is also true for misspellings for which the realized form does not create an alternate word (e.g., `dessk` would be tagged as `NN`)
+-
 ## Some problematic tags
 The following section will outline some frequent problematic cases. This is NOT exhaustive, and if you think your questions is not answered, refer to the following manual [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf).
 
@@ -116,5 +123,3 @@ Sometimes it is unclear whether one is cardinal number or a noun. In general, it
   - Note that the clause including `so_CC` cannot be moved to the beginning of an utterance "\*`So_CC` I eat it weekly, I like pizza"
 - If `so` connects two clauses and is followed by `that` or could be replaced with `so that` it is a subordinating conjunction (IN) as in "I eat pizza daily `so_IN` that I can get better at rock climbing"
   - Note that a clause that includes `so_IN` can be moved to the beginning of a sentence (which means that `so_IN` can occur at the beginning of a sentence!) as in "`So_IN` that I can get better at rock climbing, I eat pizza daily"
-
-
