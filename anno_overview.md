@@ -68,7 +68,7 @@ Often, utterances will include "errors". Following the procedures in Berzak et a
 - In cases where the form is ambiguous between `VB` another tag (e.g., `VBP`) **AND** the form doesn't agree with the subject in any tense, use the `VB` tag (as in the first example above).
 - Plural marking: Words should be tagged according to the realized form. In the sentence `I ate one pizzas yesterday`, `pizza` should be tagged as `NNS`
 - Erroneous word form uses whose form cannot be assigned a Penn Tag get the closest reasonable tag. For example, adjectives with a plural marker (e.g., `interestings`) would get the normal `JJ` tag. This is also true for misspellings for which the realized form does not create an alternate word (e.g., `dessk` would be tagged as `NN`)
--
+
 ## Some problematic tags
 The following section will outline some frequent problematic cases. This is NOT exhaustive, and if you think your questions is not answered, refer to the following manual [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf).
 
@@ -103,14 +103,24 @@ If both or either are used with coordinating conjunctions, they are CC.
 - Either (CC) A or B
 ?? Both of the two.
 
-### `little` (`JJ` or `RB`?)
-- `little` should be tagged as `JJ` when it modifies a noun, as in "I only want a little bit".
-- This holds true even in the predicate: "That piece of fruit is little." (This should be tagged as `JJ`)
-- `little` should be tagged as `RB` when it directly modifies a verb, as in the sentence "They slept a little." (Here, little is telling us how much they slept)
+### "have" (`VB*` or `MD`)
+"have" has three uses, and all should be tagged with the appropriate `VB*` tag for its use (following the Penn guidelines, page 17 [19 in .pdf]):
+- "have" as an auxiliary verb in "She has visited Thailand" gets `VBZ` and in "I have visited Thailand" gets `VBP`
+- "have" as a modal auxiliary as in "He has to go to Thailand" gets `VBZ` and "They have to go to Thailand" gets `VBP`
+- "have" as a lexical verb in "They had a nice car" gets `VBD`
+
+### "little" (`JJ` or `RB`?)
+- "little" should be tagged as `JJ` when it modifies a noun, as in "I only want a **little** bit".
+- This holds true even in the predicate: "That piece of fruit is **little**." (This should be tagged as `JJ`)
+- "little" should be tagged as `RB` when it directly modifies a verb, as in the sentence "They slept a **little**." (Here, little is telling us how much they slept)
 
 ### "much" (JJ or RB?)
 - "much" should be tagged as JJ when explicitly modifying a noun or noun phrase (e.g., "they drank too much **beer**")
 - "much" should be tagged as RB if not explicitly modifying a noun or noun phrase (e.g., "they drank too much")
+
+### "now" (`RB` or `UH`)
+- "now" is usually tagged as `RB`, as in "now I know what to do" (now tells us when)
+- "now" can also be used as an interjection `UH` as in the sentence "Now, I am not suggesting that..." (where "now" is acting as a filler)
 
 ### "one" (CD or NN?)
 Sometimes it is unclear whether one is cardinal number or a noun. In general, it should be tagged as a cardinal number (CD) even when it is not clearly that of a numeral

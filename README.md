@@ -4,8 +4,8 @@
 Below are various links to resources for annotators:
 
 #### Part of Speech (POS) tagging
-[POS Tagging Guidelines Overview](anno_overview.md)
-<a href="https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf" target="_blank">POS Tagging Manual</a>
+[POS Tagging Guidelines Overview](anno_overview.md)  
+<a href="https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf" target="_blank">POS Tagging Manual</a>  
 <a href="http://people.csail.mit.edu/berzak/tle_guidelines/guidelines.pdf" target="_blank">ESL Specific POS Tagging Manual</a>  
 <a href="https://www.laurenceanthony.net/software/antconc/" target="_blank">AntConc Concordancing Tool</a>  
 <a href="https://drive.google.com/drive/folders/1fP18vggMGlmRGJESm81pLO3J6EPeAnft?usp=sharing" target="_blank">Tagged Reference Corpus</a>
@@ -16,4 +16,4 @@ Below are various links to resources for annotators:
 
 
 ### Announcements, etc.
-<a href="https://kristopherkyle.github.io/pages/lab_hours.md" target="_blank">Lab Hours</a>  
+Check back for announcements
