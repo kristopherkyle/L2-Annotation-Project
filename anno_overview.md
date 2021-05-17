@@ -103,6 +103,11 @@ If both or either are used with coordinating conjunctions, they are CC.
 - Either (CC) A or B
 ?? Both of the two.
 
+### `little` (`JJ` or `RB`?)
+- `little` should be tagged as `JJ` when it modifies a noun, as in "I only want a little bit".
+- This holds true even in the predicate: "That piece of fruit is little." (This should be tagged as `JJ`)
+- `little` should be tagged as `RB` when it directly modifies a verb, as in the sentence "They slept a little." (Here, little is telling us how much they slept)
+
 ### "much" (JJ or RB?)
 - "much" should be tagged as JJ when explicitly modifying a noun or noun phrase (e.g., "they drank too much **beer**")
 - "much" should be tagged as RB if not explicitly modifying a noun or noun phrase (e.g., "they drank too much")
