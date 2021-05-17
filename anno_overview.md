@@ -69,7 +69,7 @@ Often, utterances will include "errors". Following the procedures in Berzak et a
 - Plural marking: Words should be tagged according to the realized form. In the sentence `I ate one pizzas yesterday`, `pizza` should be tagged as `NNS`
 - Erroneous word form uses whose form cannot be assigned a Penn Tag get the closest reasonable tag. For example, adjectives with a plural marker (e.g., `interestings`) would get the normal `JJ` tag. This is also true for misspellings for which the realized form does not create an alternate word (e.g., `dessk` would be tagged as `NN`)
 
-## [Some problematic tags](#some-problematic-tags)
+## Some problematic tags
 The following section will outline some frequent problematic cases. This is NOT exhaustive, and if you think your questions is not answered, refer to the following manual [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf).
 
 ### Adverb (RB) or Particle (RP)
