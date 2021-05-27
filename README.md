@@ -9,6 +9,7 @@ Below are various links to resources for annotators:
 <a href="http://people.csail.mit.edu/berzak/tle_guidelines/guidelines.pdf" target="_blank">ESL Specific POS Tagging Manual</a>  
 <a href="https://www.laurenceanthony.net/software/antconc/" target="_blank">AntConc Concordancing Tool</a>  
 <a href="https://drive.google.com/drive/folders/1fP18vggMGlmRGJESm81pLO3J6EPeAnft?usp=sharing" target="_blank">Tagged Reference Corpus</a>
+<a href="https://drive.google.com/file/d/1Jf3lW1kqcJxi_RueIroIzS-tLoIEtAj8/view?usp=sharing" target="_blank">Tagged ESL Reference Corpus</a>
 
 #### Dependency tagging
 <a href="https://nlp.stanford.edu/software/dependencies_manual.pdf" target="_blank">Stanford Dependency Manual</a>
