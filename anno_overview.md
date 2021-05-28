@@ -18,7 +18,7 @@ Here, each tag is described and examples of each are also given.
 | Penn Tagset | Description                              | Example                                 |Notes|
 |:-----------:|------------------------------------------|-----------------------------------------|-----|
 |      CC     | coordinating conjunction                 | `and`         , `but`, `yet`        ||
-|      CD     | cardinal number                          | `1`, `third`                                |Numbers should be treated as Adj (JJ) when they have the same distribution as JJ. e.g., a 50-3 victory |
+|      CD     | cardinal number                          | `1`, `third`                                |Numbers are almost always tagged as CD. The Penn guidelines indicate that numbers can be tagged as JJ when that number is synonymous with an adjective (e.g., a 50-3 [wide|easy|handy] victory)or as an RB when the number is synonymous with an adverb (e.g., they won 50-3 [easily|handily]). These cases, however, are rare.|
 |      DT     | determiner                               | `the`, `a(n)`, `no`, `every`, `another`, `any`, `that`, `these` |`both` and `all` are DT when they occupy the determiner position as in `all roads` or `both times` (see PDT). |
 |      EX     | existential there                        | `there` is                                ||
 |      FW     | foreign word                             | `d'hoevre`                                ||
