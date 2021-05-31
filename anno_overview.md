@@ -18,7 +18,7 @@ Here, each tag is described and examples of each are also given.
 | Penn Tagset | Description                              | Example                                 |Notes|
 |:-----------:|------------------------------------------|-----------------------------------------|-----|
 |      CC     | coordinating conjunction                 | `and`         , `but`, `yet`        ||
-|      CD     | cardinal number                          | `1`, `third`                                |Numbers are almost always tagged as CD. The Penn guidelines indicate that numbers can be tagged as JJ when that number is synonymous with an adjective (e.g., a 50-3 [wide/easy/handy] victory)or as an RB when the number is synonymous with an adverb (e.g., they won 50-3 [easily/handily]). These cases, however, are exceedingly rare. When in doubt, tag numbers as CD.|
+|      CD     | cardinal number                          | `1`, `third`                                |Cardinal numbers (but not ordinal numbers such as "first") are almost always tagged as CD. The Penn guidelines indicate that numbers can be tagged as JJ when that number is synonymous with an adjective (e.g., a 50-3 [wide/easy/handy] victory)or as an RB when the number is synonymous with an adverb (e.g., they won 50-3 [easily/handily]). These cases, however, are exceedingly rare. When in doubt, tag numbers as CD.|
 |      DT     | determiner                               | `the`, `a(n)`, `no`, `every`, `another`, `any`, `that`, `these` |`both` and `all` are DT when they occupy the determiner position as in `all roads` or `both times` (see PDT). |
 |      EX     | existential there                        | `there` is                                ||
 |      FW     | foreign word                             | `d'hoevre`                                ||
@@ -109,6 +109,9 @@ If both or either are used with coordinating conjunctions, they are CC.
 - Either (CC) A or B
 ?? Both of the two.
 
+### "first" (`JJ`, `RB` or `LS`)
+`first` (and other ordinal numbers) is most commonly tagged as an adjective JJ as in `the first issue`. When used to introduce a sentence, `first` is  almost always tagged as `RB` as in `First, the president was ...`. It can also be tagged as `LS` when used in a list (but this is rare and confined to short, focused lists).
+
 ### "have" (`VB*` or `MD`)
 "have" has three uses, and all should be tagged with the appropriate `VB*` tag for its use (following the Penn guidelines, page 17 [19 in .pdf]):
 - "have" as an auxiliary verb in "She has visited Thailand" gets `VBZ` and in "I have visited Thailand" gets `VBP`
@@ -120,7 +123,7 @@ If both or either are used with coordinating conjunctions, they are CC.
 - This holds true even in the predicate: "That piece of fruit is **little**." (This should be tagged as `JJ`)
 - "little" should be tagged as `RB` when it directly modifies a verb, as in the sentence "They slept a **little**." (Here, little is telling us how much they slept)
 
-### "much" (JJ or RB?)
+### "much" (`JJ` or `RB`?)
 - "much" should be tagged as JJ when explicitly modifying a noun or noun phrase (e.g., "they drank too much **beer**")
 - "much" should be tagged as RB if not explicitly modifying a noun or noun phrase (e.g., "they drank too much")
 
@@ -128,13 +131,13 @@ If both or either are used with coordinating conjunctions, they are CC.
 - "now" is usually tagged as `RB`, as in "now I know what to do" (now tells us when)
 - "now" can also be used as an interjection `UH` as in the sentence "Now, I am not suggesting that..." (where "now" is acting as a filler)
 
-### "one" (CD or NN?)
+### "one" (`CD` or `NN`?)
 Sometimes it is unclear whether one is cardinal number or a noun. In general, it should be tagged as a cardinal number (CD) even when it is not clearly that of a numeral
 
 - one (CD) of the reasons
 - the only one (NN) of its kind.
 
-### "so" (RB, CC, or IN?)
+### "so" (`RB`, `CC`, or `IN`?)
 `So` is quite versatile and can therefore be difficult to tag. Note that `so` is not tagged consisentently in the corpus.
 
 `So` will often be used as an adverb (RB) as in "that pizza was `so_RB` good"
