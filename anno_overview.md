@@ -79,9 +79,6 @@ You can insert manner adverbs (e.g., calmly) when they are adverbs.
 - to sit calmly `by` (RB)
 - \*to give calmly `up` (RP)
 
-### Numbers (I am not sure this is reflected in spaCy)
-If they are used to modify nouns, they are JJ, not CD....
-
 ## Some problematic words
 
 ### "'s"
