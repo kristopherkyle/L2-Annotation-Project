@@ -74,12 +74,16 @@ Often, utterances will include "errors". Following the procedures in Berzak et a
 The following section will outline some frequent problematic cases. This is NOT exhaustive, and if you think your questions is not answered, refer to the following manual [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf).
 
 ### Adverb (RB) or Particle (RP)
-(For more details see the [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf) on page 21).
-You can insert manner adverbs (e.g., calmly) when they are adverbs.
-- to sit calmly `by` (RB)
+The [Penn tagging guidelines](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf) provide a number of test that can be used to distinguish these three tags on pages 9, 10, 11, and 21). A very small set of these are included below:
+
+Prepositions (`IN`) are directly associated with a noun phrase, while particles (`RP`) and adverbs (`RB`) are not.
+- look `at_IN` the picture
+- blaze `out_IN` into space
+
+You cannot insert manner adverbs (e.g., calmly) between a verb and a particle.
 - \*to give calmly `up` (RP)
 
-## Some problematic words
+## Some problematic words/phrases
 
 ### "'s"
 `'s` should be tagged as `POS` if used as a possessive and `VBZ` if used as a verb.
@@ -108,6 +112,13 @@ If both or either are used with coordinating conjunctions, they are CC.
 
 ### "first" (`JJ`, `RB` or `LS`)
 `first` (and other ordinal numbers) is most commonly tagged as an adjective JJ as in `the first issue`. When used to introduce a sentence, `first` is  almost always tagged as `RB` as in `First, the president was ...`. It can also be tagged as `LS` when used in a list (but this is rare and confined to short, focused lists).
+
+### "go out" (`IN`, `RB`, or `RP`)
+In the case of "go out", "out" can be tagged as `IN`, `RB`, OR `RP`. The tags are somewhat inconsistently applied in the corpora, but the following guidelines should be used:
+- If "out" indicates a literal location as in "When you go out of the hotel, turn right", it gets `IN`
+- If "out" is not used as a preposition (and it passes the tests on pages 9, 10, 11, and 21 of the Penn tagging guidelines .pdf) as in "My life was going to go out in flames" or "They want to go out with me", it should be treated as an `RP`.
+- If "out" is not used as a preposition and it passes the tests for an adverb in the tagging guidelines (e.g., an adverb can be inserted between "go" and "out") as in "Let's go [calmly] out and do our thing.", it can be tagged as `RB`. These cases are rare.
+
 
 ### "have" (`VB*` or `MD`)
 "have" has three uses, and all should be tagged with the appropriate `VB*` tag for its use (following the Penn guidelines, page 17 [19 in .pdf]):
