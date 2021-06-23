@@ -73,7 +73,7 @@ Often, utterances will include "errors". Following the procedures in Berzak et a
 ## Some problematic tags
 The following section will outline some frequent problematic cases. This is NOT exhaustive, and if you think your questions is not answered, refer to the following manual [PennTag POS tagging guideline](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf).
 
-### Adverb (RB) or Particle (RP)
+### Adverb (RB) or Particle (RP)?
 The [Penn tagging guidelines](https://catalog.ldc.upenn.edu/docs/LDC99T42/tagguid1.pdf) provide a number of test that can be used to distinguish these three tags on pages 9, 10, 11, and 21). A very small set of these are included below:
 
 Prepositions (`IN`) are directly associated with a noun phrase, while particles (`RP`) and adverbs (`RB`) are not.
@@ -82,6 +82,11 @@ Prepositions (`IN`) are directly associated with a noun phrase, while particles 
 
 You cannot insert manner adverbs (e.g., calmly) between a verb and a particle.
 - \*to give calmly `up` (RP)
+
+### Proper noun `NNP` or `NN`?
+As per the Penn tagging guidelines, capitalized words should only be counted as proper nouns when clearly referring to a proper noun (e.g., March, New York Times). When this is unclear, tag nouns as common nouns.
+
+Words such as "state" (as in Washington S/state) and "prefecture" should be counted as common nouns except when used as part of name (e.g., "State Department", "Secretary of State").
 
 ## Some problematic words/phrases
 
@@ -126,6 +131,11 @@ In the case of "go out", "out" can be tagged as `IN`, `RB`, OR `RP`. The tags ar
 - "have" as a modal auxiliary as in "He has to go to Thailand" gets `VBZ` and "They have to go to Thailand" gets `VBP`
 - "have" as a lexical verb in "They had a nice car" gets `VBD`
 
+### "like" (`VB*`, `IN`, or `UH`)
+- If "like" is used as a verb, tag it as a verb.
+- If "like" is used in a construction that could roughly be replaced with "such as", then it gets a `IN` tag.
+- In some cases, "like" will be used as an interjection (sometimes at the end of a sentence). In this case, it gets a `UH` tag. This is less common than the `IN` tag.
+
 ### "little" (`JJ` or `RB`?)
 - "little" should be tagged as `JJ` when it modifies a noun, as in "I only want a **little** bit".
 - This holds true even in the predicate: "That piece of fruit is **little**." (This should be tagged as `JJ`)
@@ -138,6 +148,11 @@ In the case of "go out", "out" can be tagged as `IN`, `RB`, OR `RP`. The tags ar
 ### "now" (`RB` or `UH`)
 - "now" is usually tagged as `RB`, as in "now I know what to do" (now tells us when)
 - "now" can also be used as an interjection `UH` as in the sentence "Now, I am not suggesting that..." (where "now" is acting as a filler)
+
+### "of course" (`IN NN` or `RB RB`?)
+Following the WSJ texts and the ESL corpus, "of course" should be tagged as `of_RB course_RB` when used as an adverbial phrase as in "Of_RB course_RB, Washington had n't..."
+
+In fairly rare circumstances, "of course" can also be used as in preposition + noun constructions as in the phrase, "As a matter of_IN course_NN, we check the corpus"
 
 ### "one" (`CD` or `NN`?)
 Sometimes it is unclear whether one is cardinal number or a noun. In general, it should be tagged as a cardinal number (CD) even when it is not clearly that of a numeral
