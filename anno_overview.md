@@ -115,6 +115,9 @@ If both or either are used with coordinating conjunctions, they are CC.
 - Either (CC) A or B
 ?? Both of the two.
 
+### "cell phone"
+The guidelines are a bit unclear on how "cell phone" should be tagged. Based on the corpus, however, `cell phone` should always be tagged as `cell_NN phone_NN`.
+
 ### "first" (`JJ`, `RB` or `LS`)
 `first` (and other ordinal numbers) is most commonly tagged as an adjective JJ as in `the first issue`. When used to introduce a sentence, `first` is  almost always tagged as `RB` as in `First, the president was ...`. It can also be tagged as `LS` when used in a list (but this is rare and confined to short, focused lists).
 
