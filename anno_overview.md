@@ -83,6 +83,9 @@ Prepositions (`IN`) are directly associated with a noun phrase, while particles 
 You cannot insert manner adverbs (e.g., calmly) between a verb and a particle.
 - \*to give calmly `up` (RP)
 
+### Hyphenated words
+Hyphenated words with nouns as the root should be tagged as `JJ NN` such as `T_JJ shirt_NN`, according to the tagging guidelines (page 12). This is the case even if the unhyphenated version of the utterance should be tagged as `NN NN`. In the case of a transcribed corpus, this becomes arbitrary, but we will base our tags on how the utterance was transcribed.
+
 ### Proper noun `NNP` or `NN`?
 As per the Penn tagging guidelines, capitalized words should only be counted as proper nouns when clearly referring to a proper noun (e.g., March, New York Times). When this is unclear, tag nouns as common nouns.
 
@@ -99,6 +102,11 @@ If `'s` is incorrectly as a plural, leave the tag blank and add it to the [trans
 - If "about means "approximately", it should be tagged as RB (e.g., "It will take about one hour")
 - If "about" has an object (and does not mean "approximately"), then it should be tagged as IN (e.g., "talking about a species...")
 - In some other cases, "about" will be tagged as an RP. (e.g., "bring about change"). See "Adverb (RB) or Particle (RP)" section  for more on this.
+
+### between
+Between should be tagged as `IN`.
+- "I often fly `between_IN` Denver and Eugene"
+
 
 ### "both", "either", "all", etc. (CC, DT, or PDT?)
 If both, either is directly modifying a noun, they are determiner (DT).
@@ -117,6 +125,12 @@ If both or either are used with coordinating conjunctions, they are CC.
 
 ### "cell phone"
 The guidelines are a bit unclear on how "cell phone" should be tagged. Based on the corpus, however, `cell phone` should always be tagged as `cell_NN phone_NN`.
+
+### everyday (`JJ`, `NN`, or `RB`?)
+Everyday should be tagged as `NN` and not as `RB` following the Penn Guidelines on pages 18-19. If "everyday" directly modifies a noun, then it should be tagged as `JJ`. The utterance "every day" should be tagged as `every_JJ day_NN`.
+- I go there `everyday_NN`
+- Those are my `everday_JJ` jeans.
+
 
 ### "first" (`JJ`, `RB` or `LS`)
 `first` (and other ordinal numbers) is most commonly tagged as an adjective JJ as in `the first issue`. When used to introduce a sentence, `first` is  almost always tagged as `RB` as in `First, the president was ...`. It can also be tagged as `LS` when used in a list (but this is rare and confined to short, focused lists).
@@ -163,12 +177,18 @@ Sometimes it is unclear whether one is cardinal number or a noun. In general, it
 - one (CD) of the reasons
 - the only one (NN) of its kind.
 
+### only (`JJ` or `RB`?)
+Only should be tagged as `JJ` if it directly modifies a noun or noun phrase. If it modifies a sentence (or a verb), it should be tagged as `RB`.
+
+ - "It was the `only_JJ` state in the midwest that..."
+ - "... trading moves typically last `only_RB` a few hours."
+
 ### "so" (`RB`, `CC`, or `IN`?)
-`So` is quite versatile and can therefore be difficult to tag. Note that `so` is not tagged consisentently in the corpus.
+`So` is quite versatile and can therefore be difficult to tag. Note that `so` is not tagged consistently in the corpus.
 
 `So` will often be used as an adverb (RB) as in "that pizza was `so_RB` good"
 
-`So` can also be used as a coording (CC) or subordinating (IN) conjunction.
+`So` can also be used as a coordinating (CC) or subordinating (IN) conjunction.
 - If `so` occurs at the beginning of a sentence and links the current sentence/utterance to a previous one it is a coordinating conjunction (CC) as in "`So_CC`, we went to the beach"
 - If `so` connects two clauses and could be replaced by the word `and` it should be tagged as CC as in "I like pizza, `so_CC` I eat it weekly"
   - Note that the clause including `so_CC` cannot be moved to the beginning of an utterance "\*`So_CC` I eat it weekly, I like pizza"
