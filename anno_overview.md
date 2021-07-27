@@ -13,7 +13,7 @@ If you have questions when tagging, please follow this procedure:
 ## POS tagging Scheme
 Here, each tag is described and examples of each are also given.
 
-****Note that the following `this style` is used for examples.**
+**Note that the following `this style` is used for examples.**
 
 | Penn Tagset | Description                              | Example                                 |Notes|
 |:-----------:|------------------------------------------|-----------------------------------------|-----|
