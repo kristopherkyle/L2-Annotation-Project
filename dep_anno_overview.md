@@ -21,6 +21,8 @@ Here, each dependency relation is described and examples of each are also given.
 |:-----------:|------------------------------------------|-----------------------------------------|-----|
 | acl                      | clausal modifier of noun | I have a parakeet_**head** named_**acl** cookie                                                         | The dependent will be the main verb in the modifying clause |
 | acl:relcl                | relative clause modifier | I saw the man_**head** you love_**acl:relcl**; I ate the cookie_**head** that you made_**acl:relcl**. | The dependent will be the main verb in the relative clause  |
+
+
 ## Clarifications and special cases
 
 ### Copular `be`
