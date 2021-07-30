@@ -14,8 +14,8 @@ Below are various links to resources for annotators:
 #### Dependency tagging
 [Dependency Annotation Guidelines Overview](dep_anno_overview.md)
 <a href="https://universaldependencies.org/u/dep/index.html" target="_blank">Universal Dependency Annotation Guidelines</a>
-<a href="http://people.csail.mit.edu/berzak/tle_guidelines/guidelines.pdf" target="_blank">ESL Specific Dependency Annotation Manual (see page 13 and following)</a>  
-<a href="https://webanno.github.io/webanno/releases/3.2.2/docs/user-guide.html#_relations" target="_blank">WebAnno Manual</a>
+<a href="http://people.csail.mit.edu/berzak/tle_guidelines/guidelines.pdf" target="_blank">ESL Specific Dependency Annotation Manual (see page 13 and following)</a>   
+<a href="https://webanno.github.io/webanno/releases/3.2.2/docs/user-guide.html#_relations" target="_blank">WebAnno Manual</a> 
 
 
 ### Announcements, etc.

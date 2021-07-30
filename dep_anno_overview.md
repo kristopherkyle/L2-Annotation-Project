@@ -1,5 +1,5 @@
 # Guidelines for Dependency Annotation
-(this page is in progress)
+
 We will be annotating our corpus for [Universal Dependency Relations (version 2)](https://universaldependencies.org/u/dep/index.html)
 
 If you have questions while annotation, please follow this procedure:
