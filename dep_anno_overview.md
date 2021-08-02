@@ -6,8 +6,10 @@ If you have questions during annotation, please follow this procedure:
 - Check this page
 - Check the [Dependency Guidelines](https://universaldependencies.org/u/dep/index.html)
 - Check the [ESL Guidelines](http://people.csail.mit.edu/berzak/tle_guidelines/guidelines.pdf)
-- Search the ESL corpus
-- Search the English Web Treebank (EWT)
+- Search dependency-annotated corpora with TüNDRA:
+	-	Learn how to search [here](https://weblicht.sfs.uni-tuebingen.de/Tundra/help)
+	- 	Search the [written ESL corpus](https://weblicht.sfs.uni-tuebingen.de/Tundra/FileBank_b03fc421-4ea6-4eba-96b5-e543dfe72c52/22)
+	- 	Search the [English Web Treebank (EWT)](https://weblicht.sfs.uni-tuebingen.de/Tundra/UD_English-EWT_v2.4/)
 
 ## Introduction to Dependency Relations
 Dependency relations capture functional grammatical relationships between words in an utterance. Each linguistic item in an utterance has one (and only one) syntactic head, but may have multiple (or no) dependents. For example, in the sentence `The hungry person ate the pizza`, the word `person` has one syntactic head `ate`. `person` is connected to `head` via a nominal subject `nsubj` relationship. `person` also has two syntactic dependents: `hungry` (via an adjective modifier relationship `amod`) and `The` (via a determiner relationship `det`).
