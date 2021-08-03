@@ -6,7 +6,7 @@ If you have questions during annotation, please follow this procedure:
 - Check this page
 - Check the [Dependency Guidelines](https://universaldependencies.org/u/dep/index.html)
 - Check the [ESL Guidelines](http://people.csail.mit.edu/berzak/tle_guidelines/guidelines.pdf)
-- Search dependency-annotated corpora with TüNDRA:
+- Search dependency-annotated corpora with TüNDRA (note that searches are case-sensitive):
 	-	Learn how to search [here](https://weblicht.sfs.uni-tuebingen.de/Tundra/help)
 	- 	Search the [written ESL corpus](https://weblicht.sfs.uni-tuebingen.de/Tundra/FileBank_b03fc421-4ea6-4eba-96b5-e543dfe72c52/22)
 	- 	Search the [English Web Treebank (EWT)](https://weblicht.sfs.uni-tuebingen.de/Tundra/UD_English-EWT_v2.4/)
@@ -76,3 +76,9 @@ In most sentences, the main verb of the first independent clause in a sentence i
 In constructions with copular be (e.g., `She is a professor.`), however, the `root` is the predicate (in this case, the nominal complement `professor`). The word `professor` has three dependents `She` via an `nsubj` relationship, `is` via a `cop` relationship, and `a` via a `det` relationship.
 
 In copular constructions with clausal predicates, however, as in `The important thing is to keep calm`, the "normal" conventions are used (`is` is the `root`)
+
+### `so`
+The word `so` will most often be in an `advmod` relationship:
+- when its head is an adjective as in `so_RB <--advmod-- glad_JJ`
+- when it could be substituted for `therefore` as in `I am keen on photography, so_RB I would love_VB to...`
+- when it occurs at the beginning of a sentence as in `So, my son_RB loves_VBZ yakiniku because he is young` (sidenote: we may need to re-tag the POS for so in these cases)
