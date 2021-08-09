@@ -70,6 +70,11 @@ Here, each dependency relation is described and examples of each are also given.
 
 ## Clarifications and special cases
 
+### `discourse` or `parataxis`
+Utterances such as `you know` and `I mean` can be a bit confusing to tag. Although they might seem like like discourse markers, the guidelines for the `discourse` tag [explicitly indicate](https://universaldependencies.org/u/dep/discourse.html) that instances such as `you know` are not counted as discourse markers. In cases where these (and related utterances) appear to be functioning as discourse markers, they should be tagged as instances of `parataxis`.
+- `I mean_parataxis , at the time I was 28_head` (EWT search:  `[word = "mean" & (edge = "parataxis" | edge = "discourse")] > [word = "I"]`)
+- `you know_parataxis, nature hates_head a void` (EWT search: `[word = "know" & (edge = "parataxis" | edge = "discourse")] > [word = "you"]`)
+
 ### Copular `be`
 In most sentences, the main verb of the first independent clause in a sentence is the "Root" of the sentence. In the example `The hungry person ate the pizza`, the syntactic head of `ate` is the "root" of the sentence (which isn't represented aside from the `root` tag.)
 
