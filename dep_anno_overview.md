@@ -70,8 +70,18 @@ Here, each dependency relation is described and examples of each are also given.
 
 ## Clarifications and special cases
 
+### `ccomp` or `xcomp`
+External complements (`xcomp`) are given when a clause has no overt subject AND the implied subject is the same as the head clause. This is most common with infinitive clauses.
+- `We try_head to play_xcomp` (ESL search: [edge = "xcomp"], implied subject can only be `We`)
+- `We started_head digging_xcomp` ([from guidelines](https://universaldependencies.org/u/dep/ccomp.html); implied subject of `digging` can only be `We`)
+
+Clausal complements (`ccomp`) are given when a clause has an overt subject OR the implied subject can be interpreted as something other than the subject of the head clause.
+- `I hope_head you consider_ccomp these pieces of suggestions` (ESL search: [edge = "ccomp"])
+- `The boss said_head to start_ccomp digging` ([from guidelines](https://universaldependencies.org/u/dep/ccomp.html); implied subject is possibly/likely `you` not `boss`, so it can't be `xcomp`)
+- `I say_head to him do n't bring_ccomp heavy things` (from Spoken corpus, implied subject is `you`, which is different from the subject of the head clause, `I`)
+
 ### `discourse` or `parataxis`
-Utterances such as `you know` and `I mean` can be a bit confusing to tag. Although they might seem like like discourse markers, the guidelines for the `discourse` tag [explicitly indicate](https://universaldependencies.org/u/dep/discourse.html) that instances such as `you know` are not counted as discourse markers. In cases where these (and related utterances) appear to be functioning as discourse markers, they should be tagged as instances of `parataxis`.
+Utterances such as `you know` and `I mean` can be a bit confusing to tag. Although they might seem like like discourse markers, the guidelines for the `discourse` tag [explicitly indicate](https://universaldependencies.org/u/dep/discourse.html) that instances such as `you know` are not counted as discourse markers. Even in cases where these (and related utterances) appear to be functioning as discourse markers, they should be tagged as instances of `parataxis`.
 - `I mean_parataxis , at the time I was 28_head` (EWT search:  `[word = "mean" & (edge = "parataxis" | edge = "discourse")] > [word = "I"]`)
 - `you know_parataxis, nature hates_head a void` (EWT search: `[word = "know" & (edge = "parataxis" | edge = "discourse")] > [word = "you"]`)
 
