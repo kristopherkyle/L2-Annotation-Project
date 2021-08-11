@@ -68,7 +68,7 @@ Here, each dependency relation is described and examples of each are also given.
 | [xcomp](https://universaldependencies.org/u/dep/xcomp.html)               | open clausal complement     | Further because I like_**head** to live_**xcomp** in contact with the   nature .                                                                                                                                                                                                                                                                             |                                                                                              |
 
 
-## Clarifications and special cases
+## Clarifications and special cases (tags)
 
 ### `ccomp` or `xcomp`
 External complements (`xcomp`) are given when a clause has no overt subject AND the implied subject is the same as the head clause. This is most common with infinitive clauses.
@@ -84,6 +84,56 @@ Clausal complements (`ccomp`) are given when a clause has an overt subject OR th
 Utterances such as `you know` and `I mean` can be a bit confusing to tag. Although they might seem like like discourse markers, the guidelines for the `discourse` tag [explicitly indicate](https://universaldependencies.org/u/dep/discourse.html) that instances such as `you know` are not counted as discourse markers. Even in cases where these (and related utterances) appear to be functioning as discourse markers, they should be tagged as instances of `parataxis`.
 - `I mean_parataxis , at the time I was 28_head` (EWT search:  `[word = "mean" & (edge = "parataxis" | edge = "discourse")] > [word = "I"]`)
 - `you know_parataxis, nature hates_head a void` (EWT search: `[word = "know" & (edge = "parataxis" | edge = "discourse")] > [word = "you"]`)
+
+### `nmod`
+“An nmod relation is used for nominal dependents of another noun or noun phrase”. `nmod` relationships are typically realized via prepositional phrases, wherein a prepositional phrase is modifying a noun phrase.
+
+- `our way_NN_head  of  life_NN_nmod`
+- `the boys_NNS_head in blue_JJ_nmod`
+
+Note that an `nmod` token can be a nominal itself (as is typical) as well as an attributive adjective (see ‘blue’ in the example above).
+
+`PRP` is sometimes `nmod` because it can function as the nominal dependent of another noun or noun phrase.
+- `He has a bestfriend , that was more like a brother_NN_head for him_PRP_nmod.`
+
+### `obl`
+In most sentences, an `obl` dependent is an `NNP`, `NN`, or `PRP` which has a head that is a `VB*`, `JJ`, or `RB`.
+- `Modern technology plays_VBZ_head an important role in our life_NN_obl .`
+
+An `obl` dependent can also be `IN`. Common `IN` words which can be `obl` dependents include: “with”, “for”, “like”, “from”, “about”, “into”, and “of”.
+- `After having visited shops during 10 hours and tried at least 2,000 shoes , I finally found what I was looking_VBG_head for_IN_obl .`
+- `The hotel your group has been booked_VBN_head into_IN_obl is called Palace Hotel .`
+
+“Which” and “that” can be `obl` dependents even though they are `WDT`.
+- `Here are the information which_WDT_obl you asked_VBN_head me for .`
+- `In addition to this , it was not the famous actors that_WDT_obl you have mentionned_VBN_head in the advertisement , so we were disappointed .`
+
+An `obl` dependent can also be `JJ`. This occurs in a variety of contexts.
+
+- A dependent `JJ` is preceded by a `IN`.
+	- `'Adobe Acrobat Reader 4.0 may be downloaded_VBN_head for_IN FREE_JJ_obl from www.adobe.com``
+
+
+- The word “own” when it is preceded by a `PRP$`.
+	- `The longer and further they live_VBP_head on their_PRP$ own_JJ_obl , the more they may feel that they need a family .`
+
+
+- The word “other” when preceded by the word “each”.
+	- `Students are talking_VBG_head to each_DT other_JJ_obl when they are having break .`
+
+An `obl` dependent can also be `DET` when it is preceded by a `IN` or `TO`. This occurs with the words “this”, “that”, “all”, and “another”.
+- `First_RB_head of_IN all_DET_obl , the advertisement of the show said that Danny Brook was going to be on stage .`
+- `Further I would prefer to live in a tent at the Camp , because I am already used_JJ_head to_TO that_DET_obl , because I often spent my holidays in tents .`
+
+### `nmod` or `obl`
+Making the distinction between whether a token takes an oblique (obl) or nominal modifier (nmod) dependency comes down to constituency. This distinction often is required when examining prepositional phrases. To make this distinction, one needs to determine the head of the prepositional phrase by asking the question: what is the prepositional phrase modifying?
+If the PP is modifying a noun phrase, or argument that is functioning as a noun phrase (see ‘another_DET’ below), the head of *the PP is likely an* **nmod**. Note that these cases of nmod often immediately follow the noun phrase they’re modifying.
+
+- `another_DET_head of your questions_NNS_nmod`
+
+If the PP in question modifies a verb, adjective, or adverb it will likely be tagged as **obl**. Oblique phrases can also immediately follow a noun phrase, so the position/location of the phrase in the sentence isn’t a foolproof heuristic. That is, you can’t determine the dependency of the phrase just by its relative position. 
+
+## Clarifications and special cases (particular words)
 
 ### Copular `be`
 In most sentences, the main verb of the first independent clause in a sentence is the "Root" of the sentence. In the example `The hungry person ate the pizza`, the syntactic head of `ate` is the "root" of the sentence (which isn't represented aside from the `root` tag.)
