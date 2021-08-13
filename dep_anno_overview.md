@@ -59,6 +59,7 @@ Here, each dependency relation is described and examples of each are also given.
 | [nummod](https://universaldependencies.org/u/dep/nummod.html) | numeric modifier | I usually spend my time on playing computer about three_**nummod** hours_**head** a day . | | |
 | [obj](https://universaldependencies.org/u/dep/obj.html) | object | Even we could make_**head** a trip_**obj** to Paris in the school holiday ! | | |
 | [obl](https://universaldependencies.org/u/dep/obl.html) | oblique nominal | Thank_**head** you very much for you time_**obl** . | | |
+|[obl:npmod](https://universaldependencies.org/en/dep/obl-npmod.html)	| noun phrase as adverbial modifier	| They are a bit_**obl:npmod** far_**head** from town but they have huge car park . | |
 | [obl:tmod](https://universaldependencies.org/u/dep/obl-tmod.html) | temporal modifier | I 'm so happy with the experience I lived_**head** last month_**obl:tmod** . | Only example in ESL corpus | Only example in ESL corpus |
 | [orphan](https://universaldependencies.org/u/dep/orphan.html) | orphan | So in the last century our daily life changed dramandesly and we became lazy and our life_**head** unpersonal_**orphan** , fast and unromantic . | | |
 | [parataxis](https://universaldependencies.org/u/dep/parataxis.html) | parataxis | They would be sinthetic clothes_**head** , I think_**parataxis** made of plastic or something similar . " | There are 2 dependencies in this example | There are 2 dependencies in this example |
@@ -70,6 +71,53 @@ Here, each dependency relation is described and examples of each are also given.
 
 
 ## Clarifications and special cases (tags)
+
+### `acl`
+The UD guidelines define `acl` as finite or non-finite clauses that modify a nominal. The noun that the clause modifies is the head of the `acl` relation.
+
+The dependent as a VBG:
+
+- `There are many online sites_NNS_head offering_VBG_acl booking facilities`
+
+- `The right to know everything_NN_head happening_VBG_acl in the world`
+
+The dependent as a VBN:
+
+- `I went to your show_NN_head called_VBN_acl “ Over the Rainbow”`
+
+The dependent as a VB in an infinitival clause:
+
+- `I had the chance_NN_head to spend_VB_acl time in London`
+
+Relative clauses are also instances of `acl`, though they are tagged with `acl:relcl`.
+
+- `I saw the man_NN_head you love_VBP_acl:relcl`
+
+### `acl` or `xcomp`
+The distinction between `acl` and `xcomp` is sometimes difficult to make. Both dependency relationships can contain infinitive clauses. To distinguish between the two, determine whether the head of the clause is a verb, adjective or a nominal.
+
+If the clause is modifying a verb or adjective then it is typically `xcomp`
+
+- `I started_VBD_head to work_VB_xcomp there yesterday`
+
+- `We should try_VB_head to understand_VB_xcomp technology`
+
+- `Everyone is welcome_JJ_head to join_VB_xcomp our study group`
+
+- `We are very happy_JJ_head to help_VB_xcomp you in any way`
+
+If the clause is modifying a nominal (that is, if the head of the clause is a noun phrase) then it is `acl`.
+
+### `ccomp`
+Clausal complements `ccomp` are given when a clause has an overt subject OR the implied subject can be interpreted as something other than the subject of the head clause (see `ccomp` or `xcomp`).
+
+In most sentences, a `ccomp` dependent has an overt subject and is a `VB` or `JJ` which has a head that is a type of `VB` or `JJ`.
+- `I hope_VBP_head you consider_VBP_ccomp these pieces of suggestions .`
+
+`ccomp` can sometimes be a `NN` when it is the head of a `cop` dependent.
+- `We thought it would be_VB_cop a joke_NN_head , but it was n’t .`
+- `We thought_VBD_head it would be a joke_NN_ccomp , but it was n’t .`
+
 
 ### `ccomp` or `xcomp`
 External complements (`xcomp`) are given when a clause has no overt subject AND the implied subject is the same as the head clause. This is most common with infinitive clauses.
@@ -133,6 +181,24 @@ If the PP is modifying a noun phrase, or argument that is functioning as a noun 
 - `another_DET_head of your questions_NNS_nmod`
 
 If the PP in question modifies a verb, adjective, or adverb it will likely be tagged as **obl**. Oblique phrases can also immediately follow a noun phrase, so the position/location of the phrase in the sentence isn’t a foolproof heuristic. That is, you can’t determine the dependency of the phrase just by its relative position.
+
+### `xcomp`
+External complements `xcomp` are given when a clause has no overt subject AND the implied subject is the same as the head clause (see `ccomp` or `xcomp`).
+
+In most sentences, an `xcomp` dependent has an implied subject and is a `VB` or `JJ` which has a head that is a type of `VB` or `JJ`.
+
+`VB` is often `xcomp` when firstly preceded by an infinite `TO`, which is preceded by a type of head `VB`.
+- `I really enjoyed_VBD_head to_TO serve_VB_xcomp the drinks to the pop-stars .`
+
+`VBG` is often an `xcomp` when the subject is implied from the head (which is a type of `VB`).
+- `Also, I prefer_VBP_head sleeping_VBG_xcomp in a tent than in a long cabin because it is easier to clean .`
+
+`JJ` can be an `xcomp` when it modifies the action of the head. This only happens when the head is a type of `VB`. This can happen in imperative contexts.
+- `I am writing you because I felt_VBD_head dissapointed_JJ_xcomp after seeing the musical show “ Over the Rainbow “ .`
+
+Notice that `xcomp` can happen in imperative contexts as both a `JJ` and/or a type of `VB`.
+- `Let_VB_head me make_VB_xcomp it clear , you blew my time and money .`
+- `Let me make_VB_head it clear_JJ_xcomp , you blew my time and money .`
 
 ## Clarifications and special cases (particular words)
 
