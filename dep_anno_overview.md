@@ -107,6 +107,28 @@ If the clause is modifying a verb or adjective then it is typically `xcomp`
 
 If the clause is modifying a nominal (that is, if the head of the clause is a noun phrase) then it is `acl`.
 
+### Adjectives at the beginning of utterances
+
+There are quite a few sentences in the data that begin with an adjective or an adjectival phrase. We will approach tagging these occurrences differently, depending on the type of utterance and construction it is.
+
+When the adjective is part of an unambiguously implied copular construction, it can be tagged as the root of the sentence…
+
+<fine , thank you > should be tagged as:
+
+- `fine_JJ_root , thank_VBP_parataxis you`
+
+This can also be the case in situations where there is explicit subordination attached to the initial adjective phrase:
+
+< very busy because I attend big project now >
+
+- `Very busy_JJ_root because I attend_advcl big project now`
+
+When there is no explicit subordination, nor an unambiguously implied copular construction, the initial adjective is likely a `discourse` marker. This will often be the case when the adjective can be substituted for other discourse markers like ‘OK’ or ‘yeah’ and gives no clear implication of a copular construction.
+
+<fine , I will do it > will be tagged as:
+- `fine_JJ_discourse , I will do_VB_root it`
+If there are ambiguous or confusing examples of initial adjectival utterances, be sure to bring them up in the discord/meetings so we can continue to update this heuristic.
+
 ### `ccomp`
 Clausal complements `ccomp` are given when a clause has an overt subject OR the implied subject can be interpreted as something other than the subject of the head clause (see `ccomp` or `xcomp`).
 
@@ -128,10 +150,31 @@ Clausal complements (`ccomp`) are given when a clause has an overt subject OR th
 - `The boss said_head to start_ccomp digging` ([from guidelines](https://universaldependencies.org/u/dep/ccomp.html); implied subject is possibly/likely `you` not `boss`, so it can't be `xcomp`)
 - `I say_head to him do n't bring_ccomp heavy things` (from Spoken corpus, implied subject is `you`, which is different from the subject of the head clause, `I`)
 
+### `csubj`
+`csubj` is used when the subject of a clause is itself a clause. The root of the subject clause (not the root of the sentence) is the `csubj` dependent.
+
+`csubj` is often the main verb of the subject clause.
+- `To teach_csubj pupils is not easy_head , of course .`
+
+`csubj` is often not a verb when there is a copular verb in the subject clause.
+- `It takes_head some time and practice to be able_csubj to focus on the one thought .`
+
 ### `discourse` or `parataxis`
 Utterances such as `you know` and `I mean` can be a bit confusing to tag. Although they might seem like like discourse markers, the guidelines for the `discourse` tag [explicitly indicate](https://universaldependencies.org/u/dep/discourse.html) that instances such as `you know` are not counted as discourse markers. Even in cases where these (and related utterances) appear to be functioning as discourse markers, they should be tagged as instances of `parataxis`.
 - `I mean_parataxis , at the time I was 28_head` (EWT search:  `[word = "mean" & (edge = "parataxis" | edge = "discourse")] > [word = "I"]`)
 - `you know_parataxis, nature hates_head a void` (EWT search: `[word = "know" & (edge = "parataxis" | edge = "discourse")] > [word = "you"]`)
+
+### `expl`
+`expl` is used for the existential “there”.
+- `There_expl¹ are_head¹ a lot of folk stories in the world and there_expl² are_head² a lot of folk stories in Estonia ,`
+
+“it” is marked as `expl` when it is used in extraposition constructions.
+- `It_expl was not perfect evening_head for me and my child at all !`
+- `As far as I ‘m concerned, I firmly believe that , it_expl ‘s worth_head to pointing out the following :
+
+### `flat:foreign`
+`flat:foreign` is only used when there is a sequence of foreign words. The first foreign word is the head of the flat:foreign dependents.
+- `I should have asked then but i did n’t the only line i remember is de_head lunde_flat:foreign bar_flat:foreign .. or something like that .. does anybody know which song i am talking about ?`
 
 ### `nmod`
 “An nmod relation is used for nominal dependents of another noun or noun phrase”. `nmod` relationships are typically realized via prepositional phrases, wherein a prepositional phrase is modifying a noun phrase.
@@ -180,6 +223,105 @@ If the PP is modifying a noun phrase, or argument that is functioning as a noun 
 - `another_DET_head of your questions_NNS_nmod`
 
 If the PP in question modifies a verb, adjective, or adverb it will likely be tagged as **obl**. Oblique phrases can also immediately follow a noun phrase, so the position/location of the phrase in the sentence isn’t a foolproof heuristic. That is, you can’t determine the dependency of the phrase just by its relative position.
+
+### `obl:npmod`
+This relation is used when a noun phrase is used as an adverbial modifier. This relation is often realized in:
+(i) measure phrases:
+- `that document is ten years_NNS_obl:npmod old_JJ_head
+- `My sailing days ended many years_obl:npmod ago_RB_head
+- `The board is six feet_NN_obl:npmod long_JJ_head`
+- Years ago?
+(ii) noun phrases acting adverbially, modifying noun phrases or adjectives:
+
+- `it was a little bit_NN_obl:npmod hard_JJ_head to understand`
+
+- `I can only sing_VB_head a little bit_NN_obl:npmod
+
+- `The actual vote was a little_obl:npmod confusing_head`
+
+(iii) Noun phrases as frequency descriptors:
+
+- `Growing up, we went to the beach once_RB_head a year_obl:npmod`
+
+- `I am hiring them to come twice_head a week_obl:npmod`
+
+### `obl:npmod` or `obl:tmod`
+
+Determining whether a phrase is `obl:npmod` or `obl:tmod` can be difficult, as both oblique sub-types can be phrases modifying something with respect to time. The key to distinguishing between the two is determining the purpose behind the phrase. `obl:tmod` phrases are generally used to establish a frame of reference for a verb phrase:
+
+- `I flew_head here last night_obl:tmod`
+
+- `last weekend_obl:npmod , I went_head out on the town`
+
+- `I talked_head this morning_obl:npmod with Tom and he agreed to pay up front`
+
+`obl:npmod` relations, when relaying some sort of temporal sense, often is used as a frequency adverbial:
+
+- `I typically cook dinner twice_RB_head a week_NN_obl:npmod`
+
+Phrases that contain ‘ago’ are tagged as `obl:npmod` as the noun phrase is considered to modify the adverb ‘ago’:
+
+- `I graduated from college a few years_NNS_obl:npmod ago_RB_head`
+^note that in the above example, there is a `advmod` relation from ‘graduated’ (head) to ‘ago’ (dependent), as is typical in these types of constructions
+
+### `punct`
+
+Punctuation is, unfortunately, a slightly tedious element of dependency annotation. Different projects have adhered to different guidelines and processes for annotating punctuation. This means that the corpuses are tagged rather inconsistently when it comes to punctuation, meaning that they likely shouldn’t be used as a guide. Therefore, this section, which is based on the UD version 2, will act as our guide for tagging punctuation.
+
+#### 1) Sentence level punctuation (periods, question marks, exclamation marks etc.)
+
+Sentence level punctuation is attached to the root of the sentence.
+
+- `Go_root home !_punct`
+
+- `The clown was exhausted_root(head¹), because he was juggling three pins ._punct¹ `
+
+#### 2) Clause & phrase level punctuation (commas, quotations, parentheses, occasionally hyphens etc. )
+
+Below are four rules, extrapolated from the UD guidelines page, that are intended to be clear and directional.
+
+(i) Punctuation preceding or following a dependent unit is attached to that unit (subordinate clauses like relative clauses, adverbial clauses etc.).
+
+- `The woman ,_punct who finished_head the race first ,_punct began to drink water . `
+
+- `Because some kid threw_head a rock at it ,_punct the window shattered . `
+
+(ii) Punctuation separating coordinated units attaches to the following conjunct, in accordance with rule (i).
+
+- `I know you must be going nuts with all the events ,_punct so I have not called_head .`
+- `Food like the stuff they eat in Spanish countries like tacos ,_punct¹ beans_head¹ ,_punct² rice_head² ,_punct³ pork_head³ ,_punct⁴ steak_head⁴ ,_punct⁵ ect_head⁵ .`
+
+
+(iii) Within the relevant clause or phrase, punctuation is attached to the highest syntactic unit (the head) of that clause or phrase.
+
+
+
+(iv) Paired punctuation (quotation, parentheses) is attached to the same unit.
+
+- `My favorite film is “_punct The Shining_head ”_punct`
+- `She told me “_punct You did_head a wonderful job yesterday! ”_punct`
+
+
+
+#### 3) Word level punctuation (word connecting hyphens)
+
+Hyphens, or dashes, connecting two or more words are attached to the higher level (dominant) unit. The dominant unit in these cases is the word following the hyphen.
+
+- ` What do you think of Google’s search -_punct engine_head`
+
+- `Soon it will contain a full -_punct fledged_head operating system`
+
+- `When you have a chance, can you send me an e -_punct mail_head ?`
+
+#### 4) `punct` special cases
+
+` : `
+
+Colons are treated slightly differently than other clause-level punctuation. Colons are governed by the higher level clause, NOT the dependent clause.
+
+- `AKA may refer_head to :_punct “Also known as” .`
+
+- There is only one thing_head¹ to wear on your feet in summer :_punct¹ comfy sandals . `
 
 ### `xcomp`
 External complements `xcomp` are given when a clause has no overt subject AND the implied subject is the same as the head clause (see `ccomp` or `xcomp`).
