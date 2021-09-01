@@ -385,6 +385,8 @@ A `reparandum` dependent is a disfluency which is overridden by a repair. The re
 Overridden disfluencies occur when correcting an utterance:
 - `He was the person , he and his wife Jan , introduced_reparandum -- reintroduced_head me and Laura in his backyard in July of 1977 .`
 
+or repeating an utterance:
+- `put the heater on the snake he will love it and the_reparandum the_head next day you will have dinner`
 
 ### `xcomp`
 External complements `xcomp` are given when a clause has no overt subject AND the implied subject is the same as the head clause (see `ccomp` or `xcomp`).
