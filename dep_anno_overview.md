@@ -170,11 +170,41 @@ Utterances such as `you know` and `I mean` can be a bit confusing to tag. Althou
 
 “it” is marked as `expl` when it is used in extraposition constructions.
 - `It_expl was not perfect evening_head for me and my child at all !`
-- `As far as I ‘m concerned, I firmly believe that , it_expl ‘s worth_head to pointing out the following :
+- `As far as I ‘m concerned, I firmly believe that , it_expl ‘s worth_head to pointing out the following :``
 
 ### `flat:foreign`
 `flat:foreign` is only used when there is a sequence of foreign words. The first foreign word is the head of the flat:foreign dependents.
 - `I should have asked then but i did n’t the only line i remember is de_head lunde_flat:foreign bar_flat:foreign .. or something like that .. does anybody know which song i am talking about ?`
+
+### `fixed` vs `flat` vs `compound` vs `compound:prt`
+
+`fixed` is used for multiword expressions which behave like function words or short adverbials.
+- `Of_head course_fixed , I became aware of her feelings since a friend of mine overheard a conversation between Pat and other girl .`
+
+`flat` is used for multiword expressions such as names and titles which do not use regular syntactic relations (otherwise see `compound`).
+- `The telephone was invented by Alexander_head Graham_flat Bell_flat in the end of the 19th century .`
+
+`compound` is generally used for multiword expressions of nouns. This does not include mistakenly separated words (see `goeswith`).
+- `But the most important innovation of technology_compound development_head is the computer .`
+
+Proper nouns which use regular syntactic relations are tagged as `compound` (otherwise see `flat`).
+- `This building is situated on the magnificent embankment of Niva_compound¹ River_head¹ with an excellent view on the Hermitage_compound² Museum_head² .`
+
+Multiword expressions of numbers also take the `compound` dependency.
+- `The performance started fourty_compound five_head minutes later .`
+
+`compound` can sometimes be a `JJ`.
+- `Their selection is top_compound notch_head and the staff is very knowledgeable .`
+- `my experience with them was great - low_compound stress_head , very helpful and very personal .`
+
+The particle of an idiomatic phrasal verb is marked as a `compound:prt` dependent. The head of the `compound:prt` dependent is the verb element of the phrasal verb.
+- `I could n’t believe it but he gave me the contract to fill_head it out_compound:prt .`
+
+
+### `goeswith`
+
+`goeswith` is used to mark when two parts of a word are mistakenly separated,
+- `Were the people happier in a past than to_head day_goeswith ?`
 
 ### `nmod`
 “An nmod relation is used for nominal dependents of another noun or noun phrase”. `nmod` relationships are typically realized via prepositional phrases, wherein a prepositional phrase is modifying a noun phrase.
@@ -224,6 +254,18 @@ If the PP is modifying a noun phrase, or argument that is functioning as a noun 
 
 If the PP in question modifies a verb, adjective, or adverb it will likely be tagged as **obl**. Oblique phrases can also immediately follow a noun phrase, so the position/location of the phrase in the sentence isn’t a foolproof heuristic. That is, you can’t determine the dependency of the phrase just by its relative position.
 
+### `nsubj`
+`nsubj` is used to mark the subject or agent of a clause. This most frequently occurs before a conjugated verb.
+- `On the other hand , it_nsubj looks_head pretty cool .`
+
+When the subject or agent refers to a copular verb (`cop`), the head of the `nsubj` dependent is the same as the head of the `cop`.
+- `Google_nsubj is_cop a nice search engine_head .`
+- `Is_cop that_nsubj a money maker_head ?`
+
+When “is” or “are” are the head of a preceding `expl` dependent, “is” or “are” are also the head of a following nominal `nsubj` dependent.
+- `there_expl¹ are_head¹⁺² only ten computers_nsubj² in the school ,`
+
+
 ### `obl:npmod`
 This relation is used when a noun phrase is used as an adverbial modifier. This relation is often realized in:
 (i) measure phrases:
@@ -268,7 +310,7 @@ Phrases that contain ‘ago’ are tagged as `obl:npmod` as the noun phrase is c
 
 Punctuation is, unfortunately, a slightly tedious element of dependency annotation. Different projects have adhered to different guidelines and processes for annotating punctuation. This means that the corpuses are tagged rather inconsistently when it comes to punctuation, meaning that they likely shouldn’t be used as a guide. Therefore, this section, which is based on the UD version 2, will act as our guide for tagging punctuation.
 
-#### 1) Sentence level punctuation (periods, question marks, exclamation marks etc.)
+1) Sentence level punctuation (periods, question marks, exclamation marks etc.)
 
 Sentence level punctuation is attached to the root of the sentence.
 
@@ -276,34 +318,40 @@ Sentence level punctuation is attached to the root of the sentence.
 
 - `The clown was exhausted_root(head¹), because he was juggling three pins ._punct¹ `
 
-#### 2) Clause & phrase level punctuation (commas, quotations, parentheses, occasionally hyphens etc. )
+2) Clause & phrase level punctuation (commas, quotations, parentheses, occasionally hyphens etc. )
 
 Below are four rules, extrapolated from the UD guidelines page, that are intended to be clear and directional.
 
-(i) Punctuation preceding or following a dependent unit is attached to that unit (subordinate clauses like relative clauses, adverbial clauses etc.).
+(i) Punctuation preceding or following a dependent clause or phrase is attached to the head of that clause (subordinate clauses like relative clauses, adverbial clauses, parataxis, obl, npmods etc.).
 
 - `The woman ,_punct who finished_head the race first ,_punct began to drink water . `
 
 - `Because some kid threw_head a rock at it ,_punct the window shattered . `
 
+- `The other day_head ,_punct I completed the residency application .`
+
+When there are sequential dependent clauses/phrases  (at the same syntactic level), then the following clause takes precedence over the comma separating the two clauses:
+
+- `but ,_punct¹ you know_head¹ ,_punct² you know_head² ,_punct² I went to school .`
+- `The other day ,_punct¹ in the DMV_head¹ ,_punct¹ I completed the residency application.`
+
 (ii) Punctuation separating coordinated units attaches to the following conjunct, in accordance with rule (i).
 
 - `I know you must be going nuts with all the events ,_punct so I have not called_head .`
+- `I love eating out ,_punct but ,_punct I hate_head spending money .
 - `Food like the stuff they eat in Spanish countries like tacos ,_punct¹ beans_head¹ ,_punct² rice_head² ,_punct³ pork_head³ ,_punct⁴ steak_head⁴ ,_punct⁵ ect_head⁵ .`
-
 
 (iii) Within the relevant clause or phrase, punctuation is attached to the highest syntactic unit (the head) of that clause or phrase.
 
 
-
 (iv) Paired punctuation (quotation, parentheses) is attached to the same unit.
 
-- `My favorite film is “_punct The Shining_head ”_punct`
-- `She told me “_punct You did_head a wonderful job yesterday! ”_punct`
+- `My favorite film is “_punct The Shining_head ”_punct
+- She told me “_punct You did_head a wonderful job yesterday! ”_punct
 
 
 
-#### 3) Word level punctuation (word connecting hyphens)
+3) Word level punctuation (word connecting hyphens )
 
 Hyphens, or dashes, connecting two or more words are attached to the higher level (dominant) unit. The dominant unit in these cases is the word following the hyphen.
 
@@ -313,7 +361,15 @@ Hyphens, or dashes, connecting two or more words are attached to the higher leve
 
 - `When you have a chance, can you send me an e -_punct mail_head ?`
 
-#### 4) `punct` special cases
+### `punct` special cases
+
+`,` commas around cc, discourse, and advmods
+
+Discourse, ccs, and advmods only govern punctuation at last resort. Rather, the punctuation that often appears either preceding or proceeding these tags is a dependent of the same unit that governs the cc, discourse, or advmod tag.
+
+- `I love eating out ,_punct but ,_punct I hate_head spending money .
+- `fine_discourse ,_punct I’ll do_head it . `
+- `I will ,_punct of course ,_punct drive_head you to the airport tomorrow!`
 
 ` : `
 
@@ -322,6 +378,13 @@ Colons are treated slightly differently than other clause-level punctuation. Col
 - `AKA may refer_head to :_punct “Also known as” .`
 
 - There is only one thing_head¹ to wear on your feet in summer :_punct¹ comfy sandals . `
+
+### `reparandum`
+A `reparandum` dependent is a disfluency which is overridden by a repair. The repair is the head of the `reparandum` dependent.
+
+Overridden disfluencies occur when correcting an utterance:
+- `He was the person , he and his wife Jan , introduced_reparandum -- reintroduced_head me and Laura in his backyard in July of 1977 .`
+
 
 ### `xcomp`
 External complements `xcomp` are given when a clause has no overt subject AND the implied subject is the same as the head clause (see `ccomp` or `xcomp`).
