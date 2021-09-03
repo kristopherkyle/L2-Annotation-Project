@@ -295,9 +295,9 @@ Determining whether a phrase is `obl:npmod` or `obl:tmod` can be difficult, as b
 
 - `I flew_head here last night_obl:tmod`
 
-- `last weekend_obl:npmod , I went_head out on the town`
+- `last weekend_obl:tmod , I went_head out on the town`
 
-- `I talked_head this morning_obl:npmod with Tom and he agreed to pay up front`
+- `I talked_head this morning_obl:tmod with Tom and he agreed to pay up front`
 
 `obl:npmod` relations, when relaying some sort of temporal sense, often is used as a frequency adverbial:
 
@@ -307,6 +307,7 @@ Phrases that contain ‘ago’ are tagged as `obl:npmod` as the noun phrase is c
 
 - `I graduated from college a few years_NNS_obl:npmod ago_RB_head`
 ^note that in the above example, there is a `advmod` relation from ‘graduated’ (head) to ‘ago’ (dependent), as is typical in these types of constructions
+
 
 ### `punct`
 
