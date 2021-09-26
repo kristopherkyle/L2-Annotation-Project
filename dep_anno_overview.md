@@ -183,11 +183,16 @@ Utterances such as `you know` and `I mean` can be a bit confusing to tag. Althou
 `fixed` is used for multiword expressions which behave like function words or short adverbials.
 - `Of_head course_fixed , I became aware of her feelings since a friend of mine overheard a conversation between Pat and other girl .`
 
-`flat` is used for multiword expressions such as names and titles which do not use regular syntactic relations (otherwise see `compound`).
+`flat` is used for multiword expressions such as names and titles which do not use regular syntactic relations (otherwise see `compound`). The first word in the multiword expression is the head of the flat dependencies.
 - `The telephone was invented by Alexander_head Graham_flat Bell_flat in the end of the 19th century .`
+`Flat` dependencies are used when a multiword expression is grammaticalized to the extent that there is no clear internal structure or evidence that one of the words is the syntactic head. The first word in the multiword expression is the head of the flat dependencies.
+- `New_head York_flat`
 
 `compound` is generally used for multiword expressions of nouns. This does not include mistakenly separated words (see `goeswith`).
 - `But the most important innovation of technology_compound development_head is the computer .`
+If a multiword expression is headed, it must be a compound dependency to preserve the syntactic hierarchy of the head.
+- `Apple_compound pie_head`
+However, if a headed mutliword expression is grammaticalized to the extent that there is no clear internal structure or evidence that one of the words is the syntactic head, the flat dependency is used (see `compound`)
 
 Proper nouns which use regular syntactic relations are tagged as `compound` (otherwise see `flat`).
 - `This building is situated on the magnificent embankment of Niva_compound¹ River_head¹ with an excellent view on the Hermitage_compound² Museum_head² .`
@@ -248,13 +253,64 @@ An `obl` dependent can also be `DET` when it is preceded by a `IN` or `TO`. This
 - `First_RB_head of_IN all_DET_obl , the advertisement of the show said that Danny Brook was going to be on stage .`
 - `Further I would prefer to live in a tent at the Camp , because I am already used_JJ_head to_TO that_DET_obl , because I often spent my holidays in tents .`
 
-### `nmod` or `obl`
+
+### `obl` or `nmod`
 Making the distinction between whether a token takes an oblique (obl) or nominal modifier (nmod) dependency comes down to constituency. This distinction often is required when examining prepositional phrases. To make this distinction, one needs to determine the head of the prepositional phrase by asking the question: what is the prepositional phrase modifying?
 If the PP is modifying a noun phrase, or argument that is functioning as a noun phrase (see ‘another_DET’ below), the head of *the PP is likely an* **nmod**. Note that these cases of nmod often immediately follow the noun phrase they’re modifying.
 
 - `another_DET_head of your questions_NNS_nmod`
 
 If the PP in question modifies a verb, adjective, or adverb it will likely be tagged as **obl**. Oblique phrases can also immediately follow a noun phrase, so the position/location of the phrase in the sentence isn’t a foolproof heuristic. That is, you can’t determine the dependency of the phrase just by its relative position.
+
+### `obl:npmod`
+This relation is used when a noun phrase is used as an adverbial modifier. This relation is often realized in:
+(i) measure phrases:
+- `The board is six feet_NN_obl:npmod long_JJ_head`
+(ii) noun phrases acting adverbially, modifying noun phrases or adjectives:
+
+- `it was a little bit_NN_obl:npmod hard_JJ_head to understand`
+
+- `I can only sing_VB_head a little bit_NN_obl:npmod
+
+- `The actual vote was a little_obl:npmod confusing_head`
+
+(iii) In the constructions “years old” and “years ago”:
+- `I am 17 years_obl:npmod old_JJ_head .`
+- `That was 4 years_obl:npmod ago_RB_head .`
+
+(iv) to mark time by describing the frequency of a recurring event or state:
+- `It ‘s twice my size and eats a rabbit once_head a month_obl:npmod .`
+- `I am hiring them to come twice_head a week_obl:npmod`
+- `Or will the nearly year_obl:npmod - round_head snow be too much for those who have never experienced snow in their lives ?`
+
+See `obl:npmod` vs. `obl:tmod` vs `nmod:tmod`
+
+### `obl:npmod` vs. `obl:tmod` vs `nmod:tmod`
+
+`obl:tmod` and `nmod:tmod` dependencies are nominal `obl` and `nmod` dependencies which specify time.
+
+The `obl:tmod` dependency marks nominal indicators of time of which are headed by a `VB*`, `JJ`, or `RB`.
+- `what are you doing_VBG_head tonight_NN_obl:tmod .`
+
+The `nmod:tmod` dependency is used when a nominal indicator of time is headed by another nominal construction.
+- `Are you free for lunch some day_NN_head this week_NN_nmod:tmod ?`
+
+See `nmod` or `obl` for more.
+
+When a temporal word is not headed by a nominal construction (and is therefore a type of obl rather than an nmod:tmod) it is most often an `obl:tmod` dependent, with 2 exceptions where it is instead an `obl:npmod` dependent. (Note that the corpora are inconsistent in this distinction).
+
+
+Use `obl:npmod` instead of `obl:tmod`:
+
+1) In the constructions “years old” and “years ago”.
+- `I am 17 years_obl:npmod old_JJ_head .`
+- `That was 4 years_obl:npmod ago_RB_head .`
+
+2) To describe the frequency of a recurring event or state.
+- `It ‘s twice my size and eats a rabbit once_head a month_obl:npmod .`
+- `I am hiring them to come twice_head a week_obl:npmod`
+- `Or will the nearly year_obl:npmod - round_head snow be too much for those who have never experienced snow in their lives ?`
+
 
 ### `nsubj`
 `nsubj` is used to mark the subject or agent of a clause. This most frequently occurs before a conjugated verb.
