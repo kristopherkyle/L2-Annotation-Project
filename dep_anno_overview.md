@@ -299,6 +299,14 @@ This relation is used when a noun phrase is used as an adverbial modifier. This 
 
 See `obl:npmod` vs. `obl:tmod` vs `nmod:tmod`
 
+### `obl:npmod` vs. `nmod:npmod`
+In the uncommon situation where `obl:npmod` is used to describe the
+frequency of a recurring event or state, and both the head and the
+dependent of the `obl:npmod` relationship are nouns, then the
+`nmod:npmod` tag is used instead.
+- `Yes she is having physical therapy 3 times_NN_head a
+week_NN_nmod:npmod .`
+
 ### `obl:npmod` vs. `obl:tmod` vs `nmod:tmod`
 
 `obl:tmod` and `nmod:tmod` dependencies are nominal `obl` and `nmod` dependencies which specify time.
