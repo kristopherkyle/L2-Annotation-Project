@@ -225,6 +225,19 @@ Note that an `nmod` token can be a nominal itself (as is typical) as well as an 
 `PRP` is sometimes `nmod` because it can function as the nominal dependent of another noun or noun phrase.
 - `He has a bestfriend , that was more like a brother_NN_head for him_PRP_nmod.`
 
+
+### `nsubj`
+`nsubj` is used to mark the subject or agent of a clause. This most frequently occurs before a conjugated verb.
+- `On the other hand , it_nsubj looks_head pretty cool .`
+
+When the subject or agent refers to a copular verb (`cop`), the head of the `nsubj` dependent is the same as the head of the `cop`.
+- `Google_nsubj is_cop a nice search engine_head .`
+- `Is_cop that_nsubj a money maker_head ?`
+
+When “is” or “are” are the head of a preceding `expl` dependent, “is” or “are” are also the head of a following nominal `nsubj` dependent.
+- `there_expl¹ are_head¹⁺² only ten computers_nsubj² in the school ,`
+
+
 ### `obl`
 In most sentences, an `obl` dependent is an `NNP`, `NN`, or `PRP` which has a head that is a `VB*`, `JJ`, or `RB`.
 - `Modern technology plays_VBZ_head an important role in our life_NN_obl .`
@@ -311,67 +324,6 @@ Use `obl:npmod` instead of `obl:tmod`:
 - `It ‘s twice my size and eats a rabbit once_head a month_obl:npmod .`
 - `I am hiring them to come twice_head a week_obl:npmod`
 - `Or will the nearly year_obl:npmod - round_head snow be too much for those who have never experienced snow in their lives ?`
-
-
-### `nsubj`
-`nsubj` is used to mark the subject or agent of a clause. This most frequently occurs before a conjugated verb.
-- `On the other hand , it_nsubj looks_head pretty cool .`
-
-When the subject or agent refers to a copular verb (`cop`), the head of the `nsubj` dependent is the same as the head of the `cop`.
-- `Google_nsubj is_cop a nice search engine_head .`
-- `Is_cop that_nsubj a money maker_head ?`
-
-When “is” or “are” are the head of a preceding `expl` dependent, “is” or “are” are also the head of a following nominal `nsubj` dependent.
-- `there_expl¹ are_head¹⁺² only ten computers_nsubj² in the school ,`
-
-
-### `obl:npmod`
-This relation is used when a noun phrase is used as an adverbial modifier. This relation is often realized in:
-(i) measure phrases:
-- `that document is ten years_NNS_obl:npmod old_JJ_head
-- `My sailing days ended many years_obl:npmod ago_RB_head
-- `The board is six feet_NN_obl:npmod long_JJ_head`
-- Years ago?
-(ii) noun phrases acting adverbially, modifying noun phrases or adjectives:
-
-- `it was a little bit_NN_obl:npmod hard_JJ_head to understand`
-
-- `I can only sing_VB_head a little bit_NN_obl:npmod
-
-- `The actual vote was a little_obl:npmod confusing_head`
-
-(iii) Noun phrases as frequency descriptors:
-
-- `Growing up, we went to the beach once_RB_head a year_obl:npmod`
-
-- `I am hiring them to come twice_head a week_obl:npmod`
-
-### `obl:npmod` or `obl:tmod`
-
-Determining whether a phrase is `obl:npmod` or `obl:tmod` can be difficult, as both oblique sub-types can be phrases modifying something with respect to time. The key to distinguishing between the two is determining the purpose behind the phrase. `obl:tmod` phrases are generally used to establish a frame of reference for a verb phrase:
-
-- `I flew_head here last night_obl:tmod`
-
-- `last weekend_obl:tmod , I went_head out on the town`
-
-- `I talked_head this morning_obl:tmod with Tom and he agreed to pay up front`
-
-`obl:npmod` relations, when relaying some sort of temporal sense, often is used as a frequency adverbial:
-
-- `I typically cook dinner twice_RB_head a week_NN_obl:npmod`
-
-Phrases that contain ‘ago’ are tagged as `obl:npmod` as the noun phrase is considered to modify the adverb ‘ago’:
-
-- `I graduated from college a few years_NNS_obl:npmod ago_RB_head`
-^note that in the above example, there is a `advmod` relation from ‘graduated’ (head) to ‘ago’ (dependent), as is typical in these types of constructions
-
-### `obl:npmod` vs. `nmod:npmod`
-In the uncommon situation where `obl:npmod` is used to describe the
-frequency of a recurring event or state, and both the head and the
-dependent of the `obl:npmod` relationship are nouns, then the
-`nmod:npmod` tag is used instead.
-- `Yes she is having physical therapy 3 times_NN_head a
-week_NN_nmod:npmod .`
 
 ### `punct`
 
