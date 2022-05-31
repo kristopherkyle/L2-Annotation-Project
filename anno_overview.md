@@ -127,7 +127,7 @@ If both or either are used with coordinating conjunctions, they are CC.
 The guidelines are a bit unclear on how "cell phone" should be tagged. Based on the corpus, however, `cell phone` should always be tagged as `cell_NN phone_NN`.
 
 ### everyday (`JJ`, `NN`, or `RB`?)
-Everyday should be tagged as `NN` and not as `RB` following the Penn Guidelines on pages 18-19. If "everyday" directly modifies a noun, then it should be tagged as `JJ`. The utterance "every day" should be tagged as `every_JJ day_NN`.
+Everyday should be tagged as `NN` and not as `RB` following the Penn Guidelines on pages 18-19. If "everyday" directly modifies a noun, then it should be tagged as `JJ`. The utterance "every day" should be tagged as `every_DT day_NN`.
 - I go there `everyday_NN`
 - Those are my `everday_JJ` jeans.
 
@@ -136,17 +136,41 @@ Everyday should be tagged as `NN` and not as `RB` following the Penn Guidelines 
 `first` (and other ordinal numbers) is most commonly tagged as an adjective JJ as in `the first issue`. When used to introduce a sentence, `first` is  almost always tagged as `RB` as in `First, the president was ...`. It can also be tagged as `LS` when used in a list (but this is rare and confined to short, focused lists).
 
 ### "go out" (`IN`, `RB`, or `RP`)
-In the case of "go out", "out" can be tagged as `IN`, `RB`, OR `RP`. The tags are somewhat inconsistently applied in the corpora, but the following guidelines should be used:
-- If "out" indicates a literal location as in "When you go out of the hotel, turn right", it gets `IN`
-- If "out" is not used as a preposition (and it passes the tests on pages 9, 10, 11, and 21 of the Penn tagging guidelines .pdf) as in "My life was going to go out in flames" or "They want to go out with me", it should be treated as an `RP`.
-- If "out" is not used as a preposition and it passes the tests for an adverb in the tagging guidelines (e.g., an adverb can be inserted between "go" and "out") as in "Let's go [calmly] out and do our thing.", it can be tagged as `RB`. These cases are rare.
+Potential phrasal verbs are generally tagged inconsistently in the corpora between `IN`, `RB`, and `RP`.
 
+In the construction `go out`, some of this inconsistency can be eliminated by
+the following guidelines. Note: These guidelines should not be extended to all
+phrasal verbs. In these guidelines, the `RB` is excluded for the sake of
+consistency. For other phrasal verbs, the `RB` tag should be considered.
+
+If part of the sentence with the word `out` can be replaced with the word `there`, and the sentence retains the same meaning, then `out`
+is tagged as `IN`. In this context, `out` modifies a noun phrase.
+- `The ball went [out_IN of the park] . → The ball went [there] .`
+
+If replacing part of the sentence containing the word `out` with the word `there` either changes the meaning of the sentence, or makes an ungrammatical sentence,
+then `out` is tagged as `RP`. In this context, `out` is a particle of a phrasal verb.
+- `I went [out_RP with this girl from my class] . → I went [there] .`
+- `I went [out_RP with my friends] . → I went [there] .`
+- `The lights went [out_RP] . → The lights went [there] .`
 
 ### "have" (`VB*` or `MD`)
 "have" has three uses, and all should be tagged with the appropriate `VB*` tag for its use (following the Penn guidelines, page 17 [19 in .pdf]):
 - "have" as an auxiliary verb in "She has visited Thailand" gets `VBZ` and in "I have visited Thailand" gets `VBP`
 - "have" as a modal auxiliary as in "He has to go to Thailand" gets `VBZ` and "They have to go to Thailand" gets `VBP`
 - "have" as a lexical verb in "They had a nice car" gets `VBD`
+
+### Hyphenated word special mentions.
+The following guidelines concern niche usage of hyphens. The goal of these
+guidelines is to make hyphen usage consistent in these niche situations.
+
+In the word `good - bye`, both `good` and `bye` should be tagged as `UH`.
+- `Good_UH - bye_UH . `
+
+ordinal numbers (ex: first, second, third) which are preceded by a `CD` and a hyphen should be tagged as `JJ`.
+- `That was twenty_CD -_: sixth_JJ or twenty_CD -_: third_JJ .`
+
+If `so-so` is has a meaning akin to `okay`, then both `so`'s should be tagged as `JJ`.
+- `I 'm so_JJ - so_JJ .'`
 
 ### "like" (`VB*`, `IN`, or `UH`)
 - If "like" is used as a verb, tag it as a verb.
@@ -178,10 +202,24 @@ Sometimes it is unclear whether one is cardinal number or a noun. In general, it
 - the only one (NN) of its kind.
 
 ### only (`JJ` or `RB`?)
-Only should be tagged as `JJ` if it directly modifies a noun or noun phrase. If it modifies a sentence (or a verb), it should be tagged as `RB`.
+`only` should be tagged as `JJ` if it directly modifies a noun or noun phrase. If it modifies a sentence (or a verb), it should be tagged as `RB`.
 
  - "It was the `only_JJ` state in the midwest that..."
  - "... trading moves typically last `only_RB` a few hours."
+
+### "police" (`NN` or `NNS`?)
+
+Some nouns like `police` have identical singular and plural forms. See NN vs NNS in the POS Tagging Manual for general rules in testing `NN` vs `NNS`. Below are some examples of tests.
+
+In the construction `call the police`, if the word `police` can be replaced by the word `them`, it is tagged as `NNS`.
+- `And after that , you call the police_NNS , and tell whatever you are .`
+
+If `police` is a subject of a `VBZ`, then it is tagged as `NN`.
+- `and then police_NN comes_VBZ .`
+
+If `police` is part of a singular compound noun that can be replaced by a singular object pronoun like `him`, `her`, or `it`, then `police` is tagged as `NN`. The word `there` also works as a test for locations.
+- `And Taro explained the situation to the police_NN officer .`
+- `But we tried to go to the police_NN office .`
 
 ### "so" (`RB`, `CC`, or `IN`?)
 `So` is quite versatile and can therefore be difficult to tag. Note that `so` is not tagged consistently in the corpus.
@@ -189,16 +227,61 @@ Only should be tagged as `JJ` if it directly modifies a noun or noun phrase. If 
 `So` will often be used as an adverb (RB) as in "that pizza was `so_RB` good"
 
 `So` can also be used as a coordinating (CC) or subordinating (IN) conjunction.
-- If `so` occurs at the beginning of a sentence and links the current sentence/utterance to a previous one it is a coordinating conjunction (CC) as in "`So_CC`, we went to the beach"
 - If `so` connects two clauses and could be replaced by the word `and` it should be tagged as CC as in "I like pizza, `so_CC` I eat it weekly"
   - Note that the clause including `so_CC` cannot be moved to the beginning of an utterance "\*`So_CC` I eat it weekly, I like pizza"
 - If `so` connects two clauses and is followed by `that` or could be replaced with `so that` it is a subordinating conjunction (IN) as in "I eat pizza daily `so_IN` that I can get better at rock climbing"
   - Note that a clause that includes `so_IN` can be moved to the beginning of a sentence (which means that `so_IN` can occur at the beginning of a sentence!) as in "`So_IN` that I can get better at rock climbing, I eat pizza daily"
 
+`so` is tagged as an adverb (RB) when it is the first part of a sentence.
+- `So_RB I think it 's good like'`
+
 ### "sort of" and "kind of"
 `sort of` and `kind of` shoud be tagged as `NN + IN` in cases such as "They had some kind_NN of_IN tool"
 
 However, when used as an adverbial, they should be tagged as `RB + RB` as in "They sort_RB of_RB ran away",
+
+### "that"
+`that` is tagged as `DT` in the following circumstances:
+
+1) `that` is a determiner of a noun.
+
+- `I 'd like to finish reading that_DT book by one o'clock .`
+
+2) `that` is a subject, and could be replaced by "it".
+
+- `That_DT was not too bad .`
+
+When `that` introduces a relative clause, it is tagged as `WDT`. A relative clause is a clause which modifies a noun. This means `that` is most commonly tagged as `WDT` when preceded by a noun.
+
+- `The man that_WDT works at the train station .`
+
+If the word `that` can be replaced by the word `which`, `whom`, or `who`, then it should be tagged as `WDT`.
+
+- `The doujou that_WDT we practice at ,` - which
+- `The man that_WDT works at the train station .` - who/whom
+
+`that` is sometimes tagged as `RB` when it can be replaced by the word `very`.
+
+- `It 's not that_RB good .`
+- `I actually do n't remember that_RB much .`
+
+When `that` doesn't meet the requirements to be tagged as `DT`, `WDT`, or `RB`, then it should be tagged as a subordinating conjunction `IN`.
+
+- `I just remembered that_IN I had a test today .`
+- `He got angry at me that_IN his bike broke and his phone got broken .`
+
+### Informal contractions like `wanna`
+Ideally, informal contractions like `wanna` will be transcribed as 2 separate tokens. This way, they can be tagged separately.
+- `I wan_VBP na_TO catch my flight .`
+- `I wann_VBP a_DT economy ticket .`
+
+Informal contractions being transcribed as a singular token is a transcription error. In this case, they should be tagged solely based off of the verb.
+- `I wanna_VBP catch my flight .`
+- `I wanna_VBP economy ticket .`
+
+Other informal contractions include `gotta` and `gonna`.
+- `I 'm gon_VBG na_TO call them .`
+- `Yesterday I got_VBD ta_TO go hospital .`
 
 ### "Yen" (NN or NNS)
 `Yen` should be tagged as NNS as in "one million Yen_NNS", unless it is explicitly used as NN as in "The value of the Yen_NN is increasing"

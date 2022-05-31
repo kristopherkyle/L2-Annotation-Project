@@ -210,9 +210,16 @@ The particle of an idiomatic phrasal verb is marked as a `compound:prt` dependen
 
 
 ### `goeswith`
-
-`goeswith` is used to mark when two parts of a word are mistakenly separated,
+`goeswith` is a tag that allows annotators to correct transcription errors.
+Use `goeswith` to mark orthography that should be combined, but was seperated during transcription. The first part is always the head, and all other parts are `goeswith` dependents of this head.
 - `Were the people happier in a past than to_head day_goeswith ?`
+
+`goeswith` is used for abbreviations that form into 1 word.
+- `And the movie starts from one P_head¹ M_goeswith¹ to three P_head² M._goeswith² And three people , two boys and girls buy three coke and , maybe , two popcorns .`
+- `I 'm work in C_head A_goeswith my job is technical support .`
+
+When abbreviations form two words, the `compound` tag is used instead.
+- `there is one guy who is drinking and who is listening to the C_compound D_head .`
 
 ### `nmod`
 “An nmod relation is used for nominal dependents of another noun or noun phrase”. `nmod` relationships are typically realized via prepositional phrases, wherein a prepositional phrase is modifying a noun phrase.
@@ -236,7 +243,6 @@ When the subject or agent refers to a copular verb (`cop`), the head of the `nsu
 
 When “is” or “are” are the head of a preceding `expl` dependent, “is” or “are” are also the head of a following nominal `nsubj` dependent.
 - `there_expl¹ are_head¹⁺² only ten computers_nsubj² in the school ,`
-
 
 ### `obl`
 In most sentences, an `obl` dependent is an `NNP`, `NN`, or `PRP` which has a head that is a `VB*`, `JJ`, or `RB`.
@@ -266,7 +272,6 @@ An `obl` dependent can also be `JJ`. This occurs in a variety of contexts.
 An `obl` dependent can also be `DET` when it is preceded by a `IN` or `TO`. This occurs with the words “this”, “that”, “all”, and “another”.
 - `First_RB_head of_IN all_DET_obl , the advertisement of the show said that Danny Brook was going to be on stage .`
 - `Further I would prefer to live in a tent at the Camp , because I am already used_JJ_head to_TO that_DET_obl , because I often spent my holidays in tents .`
-
 
 ### `obl` or `nmod`
 Making the distinction between whether a token takes an oblique (obl) or nominal modifier (nmod) dependency comes down to constituency. This distinction often is required when examining prepositional phrases. To make this distinction, one needs to determine the head of the prepositional phrase by asking the question: what is the prepositional phrase modifying?
@@ -333,6 +338,23 @@ Use `obl:npmod` instead of `obl:tmod`:
 - `I am hiring them to come twice_head a week_obl:npmod`
 - `Or will the nearly year_obl:npmod - round_head snow be too much for those who have never experienced snow in their lives ?`
 
+### `parataxis`
+Parataxis is used in discourse-feeling constructions such as "you know" or "I mean" when they interrupt a clause.
+- `But after I got home , I thought_head , you know_parataxis , this is not the exact thing I was looking for .`
+
+If these discourse-feeling constructions introduce a clause, then it is a higher syntactic unit (such as `root` or a `conj` dependent headed by the root) which heads a `ccomp` dependent.
+- `I have just been in tent and I think_head it is always a beautiful and interested adventure_ccomp .`
+
+
+Parataxis is used for "a pair of what could have been standalone sentences, but which are being treated together as a single sentence" (UD Guidelines). In this case, the first sentence is the head of the following sentences, which are tagged as `parataxis` dependents.
+- `I 'm work_head in C A my job is technical support_parataxis'`
+
+When a `parataxis` dependent breaks syntactic structure by occurring in-between two elements that should be adjacent, the `parataxis` dependent is headed by the same syntactic unit it interrupts.
+
+In this case, the `obl` dependent is interrupted by a `parataxis` dependent (by separating the `case` dependent from its head), so the `parataxis` dependent is also headed by the head of the `obl` dependent (the word <sit>).
+- `Just go to beach and sit aside_case¹ you know , the_det² street_head¹⁺² and see the ocean .`
+- `Just go to beach and sit_head¹⁺² aside you know_parataxis¹ , the street_obl² and see the ocean .`
+
 ### `punct`
 
 Punctuation is, unfortunately, a slightly tedious element of dependency annotation. Different projects have adhered to different guidelines and processes for annotating punctuation. This means that the corpuses are tagged rather inconsistently when it comes to punctuation, meaning that they likely shouldn’t be used as a guide. Therefore, this section, which is based on the UD version 2, will act as our guide for tagging punctuation.
@@ -394,9 +416,15 @@ Hyphens, or dashes, connecting two or more words are attached to the higher leve
 
 Discourse, ccs, and advmods only govern punctuation at last resort. Rather, the punctuation that often appears either preceding or proceeding these tags is a dependent of the same unit that governs the cc, discourse, or advmod tag.
 
-- `I love eating out ,_punct but ,_punct I hate_head spending money .
-- `fine_discourse ,_punct I’ll do_head it . `
+- ``I love eating out ,_punct but ,_punct I hate_head spending money .``
+- `fine_discourse ,_punct I’ll do_head it .`
 - `I will ,_punct of course ,_punct drive_head you to the airport tomorrow!`
+
+`,` commas around appos and dislocated dependents.
+
+Appos and dislocated dependents can both govern punctuation. In the first example below, the appos dependent also heads a flat dependent.
+- `our company 's president ,_punct¹ mister_appos_head¹⁺² Hokkaido_flat² held the home party .`
+- `Yeah , generally ,_punct¹ my upper manager_dislocated_head¹⁺² ,_punct² often they went to the overseas , so , before I went to the Germany`
 
 ` : `
 
@@ -404,7 +432,7 @@ Colons are treated slightly differently than other clause-level punctuation. Col
 
 - `AKA may refer_head to :_punct “Also known as” .`
 
-- There is only one thing_head¹ to wear on your feet in summer :_punct¹ comfy sandals . `
+- `There is only one thing_head¹ to wear on your feet in summer :_punct¹ comfy sandals .`
 
 ### `reparandum`
 A `reparandum` dependent is a disfluency which is overridden by a repair. The repair is the head of the `reparandum` dependent.
@@ -442,8 +470,65 @@ In constructions with copular be (e.g., `She is a professor.`), however, the `ro
 
 In copular constructions with clausal predicates, however, as in `The important thing is to keep calm`, the "normal" conventions are used (`is` is the `root`)
 
+### `elipses`
+Sometimes ellipses represent words lost during transcription, and their dependency relationship can be inferred based on context.
+- `Shinjuku is movie theater_head in ...._obl`
+
+When the dependency relationship of ellipses cannot be inferred based on context, they are tagged as a `punct` dependent.
+- `So ..._punct sorekara saw_head the monkey .`
+
 ### `so`
 The word `so` will most often be in an `advmod` relationship:
 - when its head is an adjective as in `so_RB <--advmod-- glad_JJ`
 - when it could be substituted for `therefore` as in `I am keen on photography, so_RB I would love_VB to...`
 - when it occurs at the beginning of a sentence as in `So, my son_RB loves_VBZ yakiniku because he is young` (sidenote: we may need to re-tag the POS for so in these cases)
+
+### `said` and `think`
+The dependency tag `obj` is used when the verb `said` or `think` modifies a non-clausal construction.
+- `And they said_head , " yes_obj " .`
+- `, I think_head cat_obj .`
+
+The dependency tag `ccomp` is used when the verb `said` or `think` modifies a clausal construction.
+- `He said_head , they are looking_ccomp for people .`
+- `I think_head it 's a math class_ccomp .'`
+
+Note: In more discourse contexts, `think` is often tagged as `parataxis`. See (`parataxis`).
+
+## Clarifications and special cases (multi-word)
+
+### one day last week
+This utterance can be both common and difficult to tag.
+
+`day` should head the `nummod` dependent `one`, the `nmod:tmod` dependent `week`, and often any punctuation which seperates the phrase from the root.
+- `One_nummod¹ day_head¹⁺²⁺³ last week_nmod:tmod² ,_punct³ the lady went to the store .`
+
+`day` is most often an `obl:tmod` dependent headed by a verb.
+- `One day_obl:tmod last week , the lady went_head to the store .`
+
+### Sentences with only discourse
+If a sentence contains only discourse, and the discourse elements are all at the same syntactic level, the root is the first discourse element in the sentence.
+The root is the head of the remaining discourse dependents.
+- `No_root , no , no , no , no .`
+
+### take care ...
+When the construction `take care` precedes a nominal, it should be tagged as follows.
+
+1) `care` is an `obj` dependent of the verb `take`.
+- `They help me take_head care_obj of the cat .`
+
+2) The nominal is an `nmod` dependent headed by `care`.
+- `They help me take care_head of the cat_nmod .`
+
+Note: Pronouns are also nominals.
+- `And I had to take care_head of her_nmod .`
+
+3) The nominal tends to head words between the nominal and the noun `care`.
+- `They help me take care of_case¹ the_det² cat_head¹⁺² .`
+
+### Words with `TO` and `IN` POS special cases
+When words with the POS `TO` or `IN` occur before punctuation, or at the end of a sentence, if they have no other option than to be headed by a preceding verb, they are generally tagged as `obl` dependents of that verb.
+- `But after I got home , I thought , you know , this is not the exact thing I was looking_head for_obl .`
+- `I ski because I like_head to_obl .`
+
+If one of these words is unambiguously an infinitival `to`, then it is instead tagged as an `xcomp` dependent.
+- `Actually , I have_head to_xcomp .`
